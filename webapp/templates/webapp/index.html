@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>iconator</title>
+
+        <!-- <link rel="stylesheet" type="text/css" href="./style.css"> -->
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Commissioner&family=Mulish&display=swap" rel="stylesheet">
+
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+
+		<meta name="theme-color" content="#ffc636">
+        
+        <style>
+                        
+            * {
+                box-sizing: border-box;
+                text-decoration: none;
+                color: #333;
+            }
+
+
+            html,
+            body {
+                margin: 0;
+                font-family: 'Commissioner', sans-serif;
+                /*font-family: 'Mulish', sans-serif;*/
+                
+                min-height: 100vh;
+                padding: 0 0.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            ::selection {
+                color: #fff;
+                background: #333;
+            }
+            body::-webkit-scrollbar {
+                width: 0.8rem;
+            }
+            body::-webkit-scrollbar-track {
+                background: #cfcfcf;
+            }
+            body::-webkit-scrollbar-thumb {
+                background: #0000007a;
+            }
+            body::-webkit-scrollbar-thumb:hover {    
+                background: #000;
+            }
+
+
+            main {
+                text-align: center;
+            }
+
+            #drop_zone {
+                border-radius: 4px;
+                padding: 100px 0px;
+
+            }
+
+
+            #title_container p {
+                margin-top: -15px;
+                font-size: 17px;
+                color: #505050;
+            }
+
+
+
+
+            input[type="file"] {
+                display: none;
+            }
+
+
+            .custom_file_upload {
+                cursor: pointer;
+                display: inline-block;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 8px 20px;
+                font-size: 16px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <header></header>
+        
+        <main>
+
+            
+
+            <form method="post" enctype="multipart/form-data" id="form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div id="drop_zone">
+                    
+                    <div id="title_container">
+                        <h1>Convert Image</h1>
+                        <p>An easy way to convert any image to .ico file</p>
+                    </div>
+    
+                    <label class="custom_file_upload">
+                        <input type="file" id="choose_file" name="image" accept="image/*"/>
+                        CHOOSE FILE
+                    </label>
+                </div>
+                
+            </form>
+            {% if context %}
+                <a href="{{context.url}}" download="{{context.title}}" id="link"></a>
+            {% endif %}
+        </main>
+
+        <footer></footer>
+    </body>
+
+    <script>
+
+        let form = document.getElementById("form");
+        let drop_zone = document.getElementById("drop_zone");
+        let choose_file = document.getElementById("choose_file");
+        
+        let link = document.getElementById("link");
+
+        drop_zone.addEventListener("drop", (ev) => {
+            console.log('File(s) dropped');
+            // Prevent default behavior (Prevent file from being opened)
+            ev.preventDefault();
+
+            if(ev.dataTransfer.items) {
+                // Use DataTransferItemList interface to access the file(s)
+                for (let i = 0; i < ev.dataTransfer.items.length; i++) {
+                    // If dropped items aren't files, reject them
+                    if (ev.dataTransfer.items[i].kind === 'file') {
+                        const file = ev.dataTransfer.items[i].getAsFile();
+                        console.log(`… file[${i}].name = ${file.name}`);
+                    }
+                }
+            } else {
+                // Use DataTransfer interface to access the file(s)
+                for (let i = 0; i < ev.dataTransfer.files.length; i++) {
+                    console.log(`… file[${i}].name = ${ev.dataTransfer.files[i].name}`);
+                }
+            }
+
+            
+            drop_zone.style.backgroundColor = "#ffffff";
+
+            form.submit();
+
+        });
+
+        choose_file.addEventListener('input', (ev) => {
+            console.log('File(s) dropped');
+            // Prevent default behavior (Prevent file from being opened)
+            ev.preventDefault();
+
+            console.log(choose_file.files)
+            
+            form.submit();
+
+        });
+
+        
+
+        drop_zone.addEventListener("dragover", (ev) => {
+            // Prevent default behavior (Prevent file from being opened)
+            ev.preventDefault();
+
+            drop_zone.style.backgroundColor = "#fddf92";
+
+        });
+
+        
+        drop_zone.addEventListener("dragleave", (ev) => {
+            // Prevent default behavior (Prevent file from being opened)
+            ev.preventDefault();
+
+            drop_zone.style.backgroundColor = "#ffffff";
+
+        });
+
+        if(link) {
+            link.click();
+            window.location.href = '/';
+        }
+            
+        
+    </script>
+</html>
