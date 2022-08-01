@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="px-12 py-8 bg-white rounded-lg shadow-xl border-2 border-blue-500">
+        <h1 class="text-2xl text-gray-700 text-center font-bold mb-6 uppercase tracking-wide drop-shadow-md">Upload Image</h1>
+        <form action="" method="post" class="flex flex-col items-center space-y-6" enctype="multipart/form-data">
+            {% if messages %}
+                {% for message in messages %}
+                    <h3 class="bg-red-100 px-12 py-1 text-red-500 text-lg capitalize font-light tracking-wide rounded-lg">{{ message }}</h3>
+                {% endfor %}
+            {% endif %}
+            {% csrf_token %}
+            <label for="image" class="w-full h-40 bg-blue-50 rounded-lg shadow-lg flex items-center justify-center text-gray-500 text-xl text-center tracking-wide capitalize">upload image<input type="file" name="image" id="image" class="hidden"></label>
+            <button type="submit" class="px-12 py-2 bg-blue-500 border border-transparent rounded-lg text-white shadow-md mt-6 font-bold capitalize transition-all duration-300 hover:bg-white hover:border-blue-500 hover:text-blue-500">Upload</button>
+        </form>
+    </div>
+{% endblock content %}
