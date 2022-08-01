@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="w-full">
+        <h1 class="text-3xl text-black font-bold text-center py-8">Welcome to favvygen</h1>
+        <p class="text-gray-500 font-semibold">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae reprehenderit nisi ad molestias corporis quidem voluptatibus assumenda deleniti commodi. Iste ex ullam doloremque. Consequuntur reiciendis quod, non totam sunt dignissimos, voluptatem voluptatibus sit, quaerat aliquam distinctio iste. Sapiente, pariatur esse quia quam magni quisquam, earum tenetur odio ex consectetur neque.</p>
+        <a href="{% url 'core:image-list' %}" class="block text-center"><button class="text-blue-500 text-xl drop-shadow-lg capitalize my-8 hover:underline">view images</button></a>
+    </div>
+{% endblock content %}

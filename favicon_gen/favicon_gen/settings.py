@@ -12,17 +12,12 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-
-#loading the environmental variables
-from dotenv import load_dotenv
-load_dotenv()  # loads the configs from .env
-
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-load_dotenv(dotenv_path)
+import cloudinary.api
+import cloudinary.uploader
+import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -46,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
-    'core'
+    'core',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -64,7 +60,7 @@ ROOT_URLCONF = 'favicon_gen.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-#Added this auth user model because i extended the django user model
+# Added this auth user model because i extended the django user model
 AUTH_USER_MODEL = 'accounts.CustomUser'
 LOGIN_URL = 'login_user'
 
@@ -144,3 +140,19 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+cloudinary.config(
+    cloud_name=str(os.getenv('CLOUD_NAME')),
+    api_key=str(os.getenv('CLOUD_KEY')),
+    api_secret=str(os.getenv('CLOUD_SECRET')),
+    secure=True
+)
+
+LOGIN_URL = 'accounts:login'
+
+cloudinary.config(
+    cloud_name=str(os.getenv('CLOUD_NAME')),
+    api_key=str(os.getenv('CLOUD_KEY')),
+    api_secret=str(os.getenv('CLOUD_SECRET')),
+    secure=True
+)
