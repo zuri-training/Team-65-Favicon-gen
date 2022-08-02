@@ -8,6 +8,9 @@ CustomUser.UserModel = get_user_model()
 
 
 def register(request):
+    if request.user.is_authenticated:
+        messages.info(request, "You are already Logged In! Log out to create a new account.")
+        return redirect('core:dashboard')
     if request.method == 'POST':
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
@@ -17,10 +20,10 @@ def register(request):
         email = request.POST['email']
         if password1 == password2:
             if CustomUser.objects.filter(username=username).exists():
-                messages.success(request, 'Username Taken')
+                messages.info(request, 'Username Taken')
                 return render(request, 'accounts/signup.html')
             elif CustomUser.objects.filter(email=email).exists():
-                messages.success(request, 'Email address already exists')
+                messages.info(request, 'Email address already exists')
                 return render(request, 'accounts/signup.html')
             else:
                 user = CustomUser.objects.create_user(
@@ -32,15 +35,19 @@ def register(request):
                     user.profile_pic = profile_pic
                 user.save()
                 login(request, user)
+                messages.success(request, 'Registration Successful')
                 return redirect('core:dashboard')
         else:
-            messages.success(request, 'Passwords don\'t match')
+            messages.info(request, 'Passwords don\'t match')
             return render(request, 'accounts/signup.html')
     else:
         return render(request, 'accounts/signup.html')
 
 
 def login_user(request):
+    if request.user.is_authenticated:
+        messages.info(request, "You are already Logged In! Log out to create a new account.")
+        return redirect('core:dashboard')
     if request.method == 'POST':
         username = request.POST['username']
         password1 = request.POST['password1']
@@ -51,7 +58,7 @@ def login_user(request):
             return redirect('core:dashboard')
         else:
             # Return an 'invalid login' error message.
-            messages.success(request, 'Wrong Username or Password, try again')
+            messages.info(request, 'Wrong Username or Password, try again')
             return redirect('accounts:login')
     else:
         return render(request, 'accounts/login.html')
@@ -62,5 +69,5 @@ def logout_user(request):
         return redirect('core:dashboard')
     else:
         logout(request)
-        messages.success(request, 'Logged Out Succesfully')
+        messages.success(request, 'You have been logged out Succesfully')
         return redirect('accounts:login')
