@@ -15,9 +15,11 @@ import os
 import cloudinary.api
 import cloudinary.uploader
 import cloudinary
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -26,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7m$*urtv0faxe2q9via-x79_i+9zt!eg!)v_a#3_zs*l^pic@)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['favicon-gen.herokuapp.com']
 
 
 # Application definition
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -88,10 +91,10 @@ WSGI_APPLICATION = 'favicon_gen.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': str(os.getenv('DB_NAME')),
-        'USER': str(os.getenv('DB_USER')),
-        'PASSWORD': str(os.getenv('DB_PASSWORD')),
-        'HOST': str(os.getenv('DB_HOST')),
+        'NAME': 'd16fu2t7fo6r67',
+        'USER': 'eymcgjsnnanftr',
+        'PASSWORD': 'ba357c03997a7cd2bcc405bc97b699bfd752274293228d01a337774eadf22854',
+        'HOST': 'ec2-34-253-119-24.eu-west-1.compute.amazonaws.com',
         'PORT': 5432,
     }
 }
@@ -134,7 +137,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
