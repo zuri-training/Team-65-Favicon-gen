@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
+:root{
+    --black:#11061A;
+    --purple:#611E97;
+    --dark-yellow:#FECD32;
+    --white:#fff;
+    --light-purple:#F7F7FD;
+    --hero-p-size:24px;
+    --header-p:20px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Manrope', sans-serif;
+}
+img{
+    width: 100%;
+}
+
+
+
+/* hero section */
+.hero-section{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    align-items: center;
+    margin: 0px 30px;
+    position: relative
+}
+.hero-write-up{
+    display: ;
+}
+.hero-write-up h2{
+    font-size: 56px;
+    color: var(--purple);
+}
+.hero-write-up p{
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: 400;
+}
+.hero-write-up a{
+    background-color: var(--dark-yellow);
+    padding: 10px;
+    color: var(--black);
+    display: block;
+    text-align: center;
+    width: 71%;
+    margin-top: 40px;
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+}
+/* hero section ending */
+
+/* arrow */
+.arrow{
+    position: relative;
+    /* background: #000; */
+    bottom: 0.6rem;
+}
+
+.arrow img{
+    position: relative;
+    left: 33rem;
+    max-width: 130px;
+}
+/* arrow ending */
+
+/* discover */
+.discover__section{
+    padding:50px 0;
+    border-top: 2px dotted #D7D7D7;
+    border-bottom: 2px dotted #D7D7D7;
+}
+
+.discover{
+    margin: 0px 30px;
+}
+    .discover__header{
+        text-align: center;
+        letter-spacing: 2px;
+    }
+    .discover__header h2{
+        font-size:40px ;
+        font-weight: 600;
+    }
+    .discover__search__bar{
+        margin-top: 20px;
+    }
+    .discover__search__bar form {
+        display: flex;
+        justify-content: center;
+
+    }
+    .discover__search__bar form input{
+        width: 48%;
+        height: 55px;
+        border:2px solid;
+        border-radius: 5px;
+        font-size: 16px;
+        border-color:var(--purple); 
+        background-color:var(--light-purple) ;
+    }
+    .discover__search__bar form input:focus{
+        outline:none;
+    }
+    .discover__search__bar form input::placeholder{
+        color: var(--black);
+        font-size: 16px;
+        font-weight: 400;
+        padding-left: 10px;
+    }
+
+        .discover__search__bar form button{
+            width: 180px;
+            border-radius: 5px;
+            border: none;
+            background-color: var(--purple);
+            color: var(--white);
+            font-size: 16px;
+        }
+/* discover ending */
+/* icons Photo and video */
+
+.icon__photos__and__video{
+    margin: 0 30px;
+}
+.icon__photos{
+    display: grid;
+    grid-template-columns:repeat(5,290px);
+    /* justify-content: center; */
+    
+    
+}
+.icon__photo__and__title{
+    text-align: center;
+}
+.icon__photos__link{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    
+}
+.icon__photos__link a{
+    display: block;
+    background-color: var(--dark-yellow);
+    width: 320px;
+    padding: 15px 0px;
+    margin-top: 30px;
+    color: black;
+    font-weight: 600;
+}
+
+/* icons Photo and video ending*/
+
+ /* icon video */
+ .icon__video__section{
+    margin: 25px 30px;
+    
+ }
+ .icon__video__header{
+    text-align: center;
+ }
+
+ .icon__video__header h2{
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: var(--black);
+ }
+ .icon__video__player video{
+    width: 100%;
+    margin-top: 20px;
+ }
+ /* icon video ending */
+
+/* features */
+.features__section{
+    margin: 0px 30px;
+    /* background: #000; */
+}
+.features__header{
+text-align: center;
+}
+.features__header h2{
+font-size:40px;
+letter-spacing: 2px;
+color: var(--black);
+}
+.features__header p{
+font-size:20px;
+color: var(--black);
+}
+.features__cards_section{
+    display: grid;
+    grid-template-columns: repeat(3,500px);
+    align-items: center;
+    justify-items: center;
+    justify-self:;
+    justify-content: center;
+}
+
+
+.features__card{
+    text-align: center;
+    margin-top: 35px;
+    /* background: green; */
+}
+.features__card img{
+    max-width: 100px;
+}
+.features__card .card__body h3{
+    margin-top: 10px;
+    font-weight: 600;
+}
+.features__card .card__body p{
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+/* features ending */
+
+/* upload */
+
+/* upload ending*/
+
+/* favicon details  */
+
+
+.favicon__details{
+    display: flex;
+    justify-content: center;
+    height: 300px;
+}
+
+.favicon__details .created{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* favicon details ending */
