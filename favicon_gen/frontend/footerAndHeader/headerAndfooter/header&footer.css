@@ -33,6 +33,11 @@ nav > a{
     color: #D7D7D7;
     font-size: 20px;
 }
+.decoration{
+   position: relative;
+   top: -4px;
+  
+}
 .sign-in{
 background-color: #FFFFFF;
 color: #1B1B1B;
