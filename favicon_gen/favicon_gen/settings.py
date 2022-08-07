@@ -16,6 +16,15 @@ import cloudinary.api
 import cloudinary.uploader
 import cloudinary
 
+MAXIRON = True
+
+if MAXIRON:
+    from dotenv import load_dotenv
+    load_dotenv()  # loads the configs from .env
+
+    dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+    load_dotenv(dotenv_path)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,14 +44,24 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'accounts',
     'core',
-    'cloudinary'
+    'cloudinary',
+
+    #AllAuth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
 ]
 
 MIDDLEWARE = [
@@ -115,9 +134,21 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#Needed by Django AllAuth
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
 # Added this auth user model because i extended the django user model
 AUTH_USER_MODEL = 'accounts.CustomUser'
 LOGIN_URL = 'login_user'
+LOGIN_REDIRECT_URL = "/"
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -156,3 +187,59 @@ cloudinary.config(
     api_secret=str(os.getenv('CLOUD_SECRET')),
     secure=True
 )
+
+
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        "APP": {
+            "client_id":
+            # os.getenv('GOOGlE_CLIENT_ID'),
+            "970366465519-22lhlm60p0h6r5e0i2au0fd6fg8v8m94.apps.googleusercontent.com",
+            "secret":
+            # os.getenv('GOOGLE_SECRET'),
+            "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",
+        },
+
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    },
+    'facebook': {
+        'METHOD': 'oauth2',
+        # 'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
+        'SCOPE': ['email', 'public_profile'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'first_name',
+            'last_name',
+            'middle_name',
+            'name',
+            'name_format',
+            'picture',
+            'short_name'
+        ],
+        'EXCHANGE_TOKEN': True,
+        # 'LOCALE_FUNC': 'path.to.callable',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v13.0',
+        'APP': {
+            # os.getenv("APP_ID"), 
+            'client_id': '469777697958206',
+            'secret':
+            # os.getenv("APP_SECRET"),
+            '6876c4ddc18bbb47f69e9eff48c9ee52',
+            'key': '',
+        },
+    },
+}
+
+
+
+SOCIALACCOUNT_LOGIN_ON_GET=True

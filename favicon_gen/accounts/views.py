@@ -34,7 +34,7 @@ def register(request):
                     profile_pic = request.FILES['profile_pic']
                     user.profile_pic = profile_pic
                 user.save()
-                login(request, user)
+                login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 messages.success(request, 'Registration Successful')
                 return redirect('core:dashboard')
         else:
@@ -53,7 +53,7 @@ def login_user(request):
         password1 = request.POST['password1']
         user = authenticate(request, username=username, password=password1)
         if user is not None:
-            login(request, user)
+            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
             # Redirect to a success page.
             return redirect('core:dashboard')
         else:

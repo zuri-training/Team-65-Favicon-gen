@@ -1,5 +1,7 @@
 from enum import auto
 from urllib import response
+
+from django.conf import settings
 import cloudinary.api
 import cloudinary.uploader
 import cloudinary
@@ -10,9 +12,17 @@ from zipfile import ZipFile, ZIP_DEFLATED
 import dotenv
 from pathlib import Path
 
-# getting the file to read the .env folder for cloudinary info
-root = Path(__file__).resolve().parent.parent
-dotenv.read_dotenv(root / '.env')
+
+if settings.MAXIRON:
+    from dotenv import load_dotenv
+    load_dotenv()  # loads the configs from .env
+
+    dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+    load_dotenv(dotenv_path)
+else:    
+    # getting the file to read the .env folder for cloudinary info
+    root = Path(__file__).resolve().parent.parent
+    dotenv.read_dotenv(root / '.env')
 
 # setting cloudinary configuration globally
 cloudinary.config(
