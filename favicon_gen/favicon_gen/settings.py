@@ -16,6 +16,7 @@ import cloudinary.api
 import cloudinary.uploader
 import cloudinary
 
+<<<<<<< HEAD
 MAXIRON = True
 
 if MAXIRON:
@@ -24,6 +25,10 @@ if MAXIRON:
 
     dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
     load_dotenv(dotenv_path)
+=======
+# heroku config
+import django_heroku
+>>>>>>> 86c588e465d9b78d8a39eed652f435eabc7720f5
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,7 +42,15 @@ SECRET_KEY = 'django-insecure-7m$*urtv0faxe2q9via-x79_i+9zt!eg!)v_a#3_zs*l^pic@)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+# heroku config
+ALLOWED_HOSTS = ['http://127.0.0.1', 'https://iconator.herokuapp.com', 'http://iconator.herokuapp.com']
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ORIGIN_WHITELIST = ['http://127.0.0.1', 'https://iconator.herokuapp.com', 'http://iconator.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1', 'https://iconator.herokuapp.com', 'http://iconator.herokuapp.com']
+
 
 
 # Application definition
@@ -189,6 +202,7 @@ cloudinary.config(
 )
 
 
+<<<<<<< HEAD
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -243,3 +257,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 
 SOCIALACCOUNT_LOGIN_ON_GET=True
+=======
+# heroku config
+django_heroku.settings(locals())
+>>>>>>> 86c588e465d9b78d8a39eed652f435eabc7720f5
