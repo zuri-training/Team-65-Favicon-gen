@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    color: #795858;
+
+}
+/* styling the header */
+
+#header{
+    width: 100%;
+    background-color: #300F4B;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    height: 96px;    
+}
+#icon{
+    margin-left: 5rem;    
+}
+nav{
+    display: flex;
+    margin-left: 5rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 479px;
+}
+nav > a{
+    color: #D7D7D7;
+    font-size: 20px;
+}
+.decoration{
+   position: relative;
+   top: -4px;
+  
+}
+.sign-in{
+background-color: #FFFFFF;
+color: #1B1B1B;
+border: 1px solid #FFCE31;
+border-radius: 4px;
+padding: 1em;
+position: absolute;
+top: 25px;
+right: 70px;
+cursor: pointer;
+font-size: 16px;
+font-weight: 700;
+}
+
+/* styling the footer */
+#footer{
+    background-color: #310F4C;
+    border-radius: 40px 40px 0px 0px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.first-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.first-section div{
+    display: block;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    padding-top: 6rem;
+    color: #ffffff;
+    line-height: 2rem;
+    width: 15%;   
+}
+.first-section div h1{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+}
+.first-section div p{
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 30px;
+}
+.first-section img{
+    margin-top: 15px;
+    margin-right: 13px;
+}
+fieldset{
+    width: 12%;
+    text-align: center;
+    margin: 1rem 0 1rem 5rem;
+    padding: 14px 30px;
+    color: white;
+    font-size: 16px;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+}
+.second-section{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 7rem 1.5rem 3rem;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+}

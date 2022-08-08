@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 32px;
+    color: #121212;
+    background: #FFFFFF;
+}
+
+.top {
+    background-image: url(about_images/about_banner.png);
+    background-size: cover;
+    height: 310px;
+    margin-top: 92px;
+    width: 100%;
+    position: relative;
+}
+
+.top-container {
+    color: white;
+    max-width: 332px;
+    position: absolute;
+    top: 174px;
+    right: 0;
+    left: +80px;
+    margin: auto;
+    height: 116px;
+    font-weight: 800;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+}
+
+.paragraph {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+}
+
+p {
+    line-height: 48px;
+}
+
+.parag-1 {
+    padding: 20px;
+    text-align: center;
+}
+
+.sec-2 {
+    padding: 10vh 0 10vh 5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.rit-parag {
+    float: right;
+}
+
+.parag-3 {
+    width: 58%;
+    font-weight: 700;
+    float: right;
+}
+
+.wrigle {
+    width: 20%;
+    margin-left: 30%;
+}

@@ -1,0 +1,171 @@
+/*
+============================================
+RESET
+============================================
+*/
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/*============================================
+CUSTOM STYLES
+============================================*/
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background: #fff;
+    overflow-x: hidden;
+}
+.section_center {
+    width: 100%;
+    padding-inline: 80px;
+    padding-block: 41px;
+}
+.btn_gold {
+    background: #FFCE31;
+    color: #1B1B1B;
+    margin-top: 1rem;
+    padding: 10px 50px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    width: max-content;
+    cursor: pointer;
+}
+/*============================================
+UPLOAD SECTION
+============================================*/
+.upload_form {
+    background-color: #310F4C;
+    padding: 1.5rem 3rem;
+    display: flex;
+    flex-direction: column;  
+}
+.upload_form h1 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.upload_label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    height: 350px;
+}
+.upload_form .btn_gold {
+    align-self: center;
+}
+.upload_label input {
+    display: none;
+}
+.info {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+}
+/*============================================
+FAVICONS SECTION
+============================================*/
+.list_text {
+    font-weight: 600;
+    font-size: 40px;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+.favicons_list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+.favicon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: #fff;
+    padding: 1.5rem;
+    border: 1px solid #BA68C8;
+    box-shadow: 0px 4px 16px #BA68C8;
+    border-radius: 10px;
+}
+.favicon_img{
+    width: 120px;
+    height: 120px;
+    padding: 1rem;
+    background: linear-gradient(146.16deg, #FFFFFF -7.93%, rgba(255, 255, 255, 0) 120.02%);
+    border: 1px solid #FFE798;
+    box-shadow: inset 0px 8px 28px rgba(252, 255, 181, 0.5), inset 0px 8px 24px rgba(227, 212, 129, 0.5);
+    border-radius: 5px;
+}
+.favicon_img img {
+    width: 100%;
+    height: 100%;
+}
+.favicon_info {
+    flex: 1;
+}
+.favicon_info h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btns a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.style_icon {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-inline-end: 10%;
+}
+/*============================================
+INSTRUCTIONS SECTION
+============================================*/
+.favicon_instructions {
+    background: #310F4C;
+    border-radius: 10px;
+    padding: 2rem;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.favicon_instructions h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+.favicon_instructions ul {
+    list-style-position: inside;
+    padding: 1rem;
+}
+.html_code {
+    margin-block: 1rem;
+    padding: 1.5rem;
+    background: #FFFFFF;
+    border-radius: 20px;
+    color: #000;
+    font-size: 20px;
+}
