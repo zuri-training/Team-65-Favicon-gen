@@ -16,7 +16,6 @@ import cloudinary.api
 import cloudinary.uploader
 import cloudinary
 
-<<<<<<< HEAD
 MAXIRON = True
 
 if MAXIRON:
@@ -25,10 +24,8 @@ if MAXIRON:
 
     dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
     load_dotenv(dotenv_path)
-=======
 # heroku config
 import django_heroku
->>>>>>> 86c588e465d9b78d8a39eed652f435eabc7720f5
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -202,7 +199,6 @@ cloudinary.config(
 )
 
 
-<<<<<<< HEAD
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -257,7 +253,5 @@ SOCIALACCOUNT_PROVIDERS = {
 
 
 SOCIALACCOUNT_LOGIN_ON_GET=True
-=======
 # heroku config
 django_heroku.settings(locals())
->>>>>>> 86c588e465d9b78d8a39eed652f435eabc7720f5
