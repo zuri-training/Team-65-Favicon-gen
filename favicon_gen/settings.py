@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7m$*urtv0faxe2q9via-x79_i+9zt!eg!)v_a#3_zs*l^pic@)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['favicon-gen.herokuapp.com']
 

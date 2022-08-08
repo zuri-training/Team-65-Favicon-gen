@@ -1,5 +1,3 @@
-from enum import auto
-from urllib import response
 import cloudinary.api
 import cloudinary.uploader
 import cloudinary
@@ -25,7 +23,7 @@ cloudinary.config(
 
 def createFavicons(img, imgid, zipid):
     # create temporary storage
-    image_path = 'core/tempstorage'
+    image_path = 'tempstorage'
     os.mkdir(image_path)
     # loop through sizes, convert image into different sizes and formats, save converted files to tempstorage
     sizes = [(16, 16), (32, 32), (180, 180), (192, 192), (512, 512)]
@@ -37,16 +35,16 @@ def createFavicons(img, imgid, zipid):
     new_image = current_Image.resize((48, 48))
     new_image.save(f'{image_path}/favicon.ico')
     # zip all files in tempstorage including site manifest in the core
-    with ZipFile('core/tempstorage/favicon.zip', 'w', ZIP_DEFLATED) as zip:
+    with ZipFile('tempstorage/favicon.zip', 'w', ZIP_DEFLATED) as zip:
         os.chdir(image_path)
         for x in os.listdir():
             if x != 'favicon_image.png':
                 zip.write(x)
-        os.chdir('../')
+        os.chdir('../core')
         zip.write('site.webmanifest')
         zip.close()
-    print('All files zipped successfully')
     # upload image and zipped file to cloudinary and retrieve url
+    os.chdir('../')
     responseImage = cloudinary.uploader.upload(
         './tempstorage/favicon_image.png', public_id=imgid)
     responseZip = cloudinary.uploader.upload(
@@ -54,6 +52,5 @@ def createFavicons(img, imgid, zipid):
     res_img = responseImage['secure_url']
     res_zip = responseZip['secure_url']
     # delete tempstorage
-    os.chdir('../')
     shutil.rmtree(image_path)
     return {'res_img': res_img, 'res_zip': res_zip}
