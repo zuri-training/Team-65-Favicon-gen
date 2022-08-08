@@ -6,4 +6,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls'), name='core'),
     path('accounts/', include('accounts.urls'), name='accounts'),
+
+    #Django AllAuth
+    path('accounts/', include('allauth.urls')),
 ]
