@@ -25,11 +25,11 @@ header {
     
 }
 
-#top_tab {
+#index_top_tab {
     margin: 84px 80px 50px 80px;
 }
 
-#top_tab article h1 {
+#index_top_tab article h1 {
     padding-top: 50px;
     font-weight: 700;
     font-size: 56px;
@@ -40,7 +40,7 @@ header {
     width: 70%;
 }
 
-#top_tab article p {
+#index_top_tab article p {
     font-weight: 400;
     font-size: 24px;
     line-height: 36px;
@@ -50,7 +50,7 @@ header {
     opacity: 0.9;
 }
 
-#top_tab button {
+#index_top_tab button {
     outline: unset;
     border: unset;
     cursor: pointer;
@@ -66,7 +66,7 @@ header {
     height: 64px;
 }
 
-#top_tab img {
+#index_top_tab img {
     margin-left: 2%;
     float: right;
     /* width: 563px; */
@@ -74,17 +74,17 @@ header {
     height: auto;
 }
 
-#discover_bar {
+#index_discover_bar {
     margin: 0 80px 112px 80px;
     text-align: center;
     
 }
 
-#arrow {
+#index_arrow {
     margin-top: 100px;
 }
 
-#discover_bar h1 {
+#index_discover_bar h1 {
     font-weight: 600;
     font-size: 40px;
     color: #11061A;
@@ -93,12 +93,12 @@ header {
 
 }
 
-#discover_bar form {
+#index_discover_bar form {
     margin-bottom: 146px;
     width: 100%;
 }
 
-#discover_bar form input {
+#index_discover_bar form input {
     outline: unset;  
     border: 1px solid #611E97;
     border-radius: 4px;
@@ -107,7 +107,7 @@ header {
     height: auto;
 }
 
-#discover_bar form button {
+#index_discover_bar form button {
     outline: unset;
     border: unset;
     position: relative;
@@ -119,7 +119,7 @@ header {
     height: auto;
 }
 
-#discover_items_container {
+#index_discover_items_container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -129,12 +129,12 @@ header {
     height: auto;
 }
 
-.discover_items {
+.index_discover_items {
     transition: .2s ease;
 }
 
 
-#discover_items_container .items_image {
+#index_discover_items_container .index_items_image {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,18 +146,18 @@ header {
     height: 216px;
 }
 
-.overlay {
+.index_overlay {
     display: none;
 }
 
 
 
-.discover_items:hover {
+.index_discover_items:hover {
     transform: scale(1.05);
 
 }
 
-#discover_items_container .items_image:hover .overlay {
+#index_discover_items_container .index_items_image:hover .index_overlay {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -172,7 +172,7 @@ header {
     transition: .2s ease;
 }
 
-.overlay_content {
+.index_overlay_content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,7 +180,7 @@ header {
 
 }
 
-.overlay .title_container {
+.index_overlay .index_title_container {
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -188,12 +188,12 @@ header {
     align-items: center;
 }
 
-.overlay img {
+.index_overlay img {
     width: 17.92px;
     height: auto;
 }
 
-.overlay p {
+.index_overlay p {
     margin-left: 5.97px;
     margin-bottom: 11px;
     font-weight: 400;
@@ -201,19 +201,19 @@ header {
     color: #FFFFFF;
 }
 
-.overlay p:hover {
+.index_overlay p:hover {
     text-decoration: underline;
 }
 
 
-#discover_items_container .items_title {
+#index_discover_items_container .index_items_title {
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
     color: #585757;
 }
 
-#see_more {
+#index_see_more {
     outline: unset;
     border: unset;
     cursor: pointer;
@@ -230,7 +230,7 @@ header {
 
 }
 
-#upload_tab {
+#index_upload_tab {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -238,7 +238,7 @@ header {
     text-align: center;
 }
 
-#drop_zone {
+#index_drop_zone {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -255,7 +255,7 @@ header {
     transition: .2s ease;
 }
 
-#drop_zone img {
+#index_drop_zone img {
     width: 100px;
     height: auto;
 }
@@ -267,7 +267,7 @@ header {
     
 }
 
-#drop_zone #browse {
+#index_drop_zone #index_browse {
     cursor: pointer;
     outline: unset;
     border: unset;
@@ -279,7 +279,7 @@ header {
     color: #605DEC;
 }
 
-#generate {
+#index_generate {
     cursor: pointer;
     outline: unset;
     border: unset;
@@ -295,7 +295,7 @@ header {
 }
 
 
-#generate_tab {
+#index_generate_tab {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -304,13 +304,13 @@ header {
 }
 
 
-#generate_tab h1 {
+#index_generate_tab h1 {
     font-weight: 600;
     font-size: 40px;
     color: #1B1B1B;
 }
 
-#generate_tab p {
+#index_generate_tab p {
     margin-top: -15px;
     font-family: 'Manrope';
     font-style: normal;
@@ -321,7 +321,7 @@ header {
     width: 64%;
 }
 
-#generate_tab video {
+#index_generate_tab video {
     margin-top: 58px;
     border-radius: 4px;
     /* width: 1280px; 
@@ -330,11 +330,11 @@ header {
     height: auto;
 }
 
-#features_tab {
+#index_features_tab {
     margin: 0 80px 138px 80px;
 }
 
-#features_tab h1 {
+#index_features_tab h1 {
     margin-bottom: -15px;
     font-weight: 600;
     font-size: 40px;
@@ -344,14 +344,14 @@ header {
 }
 
 
-#features_tab p {
+#index_features_tab p {
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
     text-align: center;
 }
 
-#features_items_container {
+#index_features_items_container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -360,13 +360,13 @@ header {
     gap: 129px;
 }
 
-#features_items_container .items_image {
+#index_features_items_container .index_items_image {
     margin: auto;
     width: 100px;
     height: 100px;
 }
 
-#features_items_container .items_title {
+#index_features_items_container .index_items_title {
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
@@ -374,7 +374,7 @@ header {
     color: #000000;
 }
 
-#features_items_container .items_paragraph {
+#index_features_items_container .index_items_paragraph {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -387,7 +387,7 @@ header {
 
 
 
-#stats_tab {
+#index_stats_tab {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -400,7 +400,7 @@ header {
     gap: 20px;
 }
 
-#stats_shape {
+#index_stats_shape {
     float: right;
     margin-top: -1px;
     margin-left: -74px;
@@ -408,28 +408,28 @@ header {
 }
 
 
-#stats_tab h2 {
+#index_stats_tab h2 {
     line-height: 10px;
     font-weight: 700;
     font-size: 40px;
     color: #fff;
 }
 
-.stats_containers {
+.index_stats_containers {
     text-align: center;
 }
 
-#stats_tab p {
+#index_stats_tab p {
     font-weight: 400;
     font-size: 20px;
     color: #fff;
 }
 
-#customer_tab {
+#index_customer_tab {
     margin-bottom: 46px;
 }
 
-#customer_tab h1 {
+#index_customer_tab h1 {
     margin-bottom: calc(95px * 2);
     font-weight: 600;
     font-size: 40px;
@@ -438,7 +438,7 @@ header {
     color: #1B1B1B;
 }
 
-#card_container {
+#index_card_container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -446,7 +446,7 @@ header {
     gap: -624px;
 }
 
-#active {
+#index_active {
     cursor: pointer;
     position: absolute;
     display: flex;
@@ -465,7 +465,7 @@ header {
     z-index: 1;
 }
 
-.inactive {
+.index_inactive {
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -483,19 +483,19 @@ header {
     height: 570px;
 }
 
-#active .open_quote,
-.inactive .open_quote {
+#index_active .index_open_quote,
+.index_inactive .index_open_quote {
     font-weight: 700;
     font-size: 64px;
     text-align: center;
 }
 
 
-#active .open_quote{
+#index_active .index_open_quote{
     color: #fff;
 }
 
-#active .paragraph {
+#index_active .index_paragraph {
     width: 464px;
     height: 337px;
     font-weight: 400;
@@ -505,14 +505,14 @@ header {
     color: #fff;
 }
 
-#active img {
+#index_active img {
     background-color: #f1f1f1;
     border-radius: 50%;
     width: 77px;
     height: auto;
 }
 
-#active .name {
+#index_active .index_name {
     color: #f1f1f1;
     font-weight: 400;
     font-size: 32px;
@@ -535,35 +535,35 @@ footer {
 
 @media screen and (max-width: 1000px) {
         
-    #top_tab article h1 {
+    #index_top_tab article h1 {
         text-align: center;
         width: 100%;
     }
 
-    #top_tab article p {
+    #index_top_tab article p {
         text-align: center;
         width: 100%;
     }
-    #top_tab button {
+    #index_top_tab button {
         width: 100%;
     }
     
-    #top_tab img {
+    #index_top_tab img {
         display: none;
     }
 
 
-    #discover_bar form {
+    #index_discover_bar form {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
 
-    #discover_bar form input {
+    #index_discover_bar form input {
         width: 100%;
     }
             
-    #generate {
+    #index_generate {
         width: 40%;
     }
 }
