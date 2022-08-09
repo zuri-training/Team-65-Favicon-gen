@@ -1,5 +1,5 @@
-let browse = document.getElementById("browse");
-let generate = document.getElementById("generate");
+let browse = document.getElementById("index_browse");
+let generate = document.getElementById("index_generate");
 
 let input = document.createElement('input');
 input.type = 'file';
@@ -10,7 +10,7 @@ browse.addEventListener("click", () => {
 });
 
 
-let drop_zone = document.getElementById("drop_zone");
+let drop_zone = document.getElementById("index_drop_zone");
 
 drop_zone.addEventListener("drop", (ev) => {
     ev.preventDefault();
@@ -56,3 +56,6 @@ generate.addEventListener("click", (ev) => {
     form.submit();
 
 });
+
+
+// cards
