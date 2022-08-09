@@ -18,8 +18,8 @@
 		<script>
 			var check = function () {
 				if (
-					document.getElementById("password").value ==
-					document.getElementById("confirm_password").value
+					document.getElementById("password1").value ==
+					document.getElementById("password2").value
 				) {
 					document.getElementById("message").style.color = "green";
 					document.getElementById("message").innerHTML = "matching";
@@ -66,17 +66,18 @@
 							<input
 								class="form-input"
 								type="password"
-								{% comment %} id="password" {% endcomment %}
+								id="password1"
 								name="password1"
 								onkeyup="check();"
 								pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 								title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
 								required
 							/>
+                            <i class="bi bi-eye-slash" id="togglePassword"></i>
 							<span
 								toggle="#password-field"
 								class="fa fa-fw fa-eye field-icon toggle-password"
-							></span>
+							></span> 
 						</label>
 
 						<label for="password"
@@ -84,10 +85,11 @@
 							<input
 								class="form-input"
 								type="password"
-								{% comment %} id="confirm_password" {% endcomment %}
+								id="password2"
 								name="password2"
 								onkeyup="check();"
 							/>
+                            <i class="bi bi-eye-slash" id="togglePassword"></i>
 							<span
 								toggle="#password-field"
 								class="fa fa-fw fa-eye field-icon toggle-password"
