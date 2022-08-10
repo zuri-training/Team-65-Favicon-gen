@@ -73,10 +73,10 @@
                 </div>
                 <div class="marg" id="cb">
                 <div>
-                    <input type="checkbox" value="lsRememberMe" id="rememberMe" />
+                    <input type="checkbox" id="rememberMe" name="rememberMe" />
                     <label id="myLabel" for="rememberMe">Remember me</label>
                 </div>
-                <a style="color: #FFCE31; font-size: 18px; line-height: 24px;" id="fg" href="">Forgot Password?</a>
+                <a style="color: #FFCE31; font-size: 18px; line-height: 24px;" id="fg" href="{% url 'accounts:reset_password' %}">Forgot Password?</a>
                 </div>
                 <div class="marg">
                 <button style="height: 60px; font-size: 18px; font-style: bold;" id="click" onclick="lsRememberMe()" type="submit">LOGIN</button>

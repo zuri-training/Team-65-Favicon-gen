@@ -50,10 +50,15 @@ def login_user(request):
         return redirect('core:dashboard')
     if request.method == 'POST':
         username = request.POST['username']
-        password1 = request.POST['password1']
+        password1 = request.POST['password1'] 
+        rememberMe = request.POST.get("rememberMe")
         user = authenticate(request, username=username, password=password1)
         if user is not None:
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            if not rememberMe:
+                request.session.set_expiry(0)
+            else:
+                rememberMe = "False"
             # Redirect to a success page.
             return redirect('core:dashboard')
         else:
