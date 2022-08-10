@@ -18,5 +18,5 @@
   I also designed the mobile about us page.
 
   
-7. The research link: https://docs.google.com/document/d/1aAI-W6hlW99osJFEHeHHsCjRBtJ5MtB4/edit?usp=sharing&ouid=116200026049709901124&rtpof=true&sd=true /
+7. The contact us figma link: https://www.figma.com/file/oNEE1MXe1vBHUsaem55CfX/ICONATOR-(Group-65)?node-id=1%3A3 .
 8. The Research Plan for Fave Icons app link: https://docs.google.com/document/d/15pBCU0C3keQD76ymtvHhbFJ1rJZG3Qlv/edit .
