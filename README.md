@@ -57,3 +57,10 @@ https://github.com/zuri-training/Team-65-Favicon-gen/issues/12
 *  Design
 *  Drag and drop
 *  Cards
+
+##Goodness 
+1. Desktop view header and footer:
+ https://github.com/zuri-training/Team-65-Favicon-gen/issues/22
+
+2. Mobile header and footer:
+https://github.com/zuri-training/Team-65-Favicon-gen/issues/34
