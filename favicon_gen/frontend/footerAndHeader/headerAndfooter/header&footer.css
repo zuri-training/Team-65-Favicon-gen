@@ -14,31 +14,32 @@ body{
     width: 100%;
     background-color: #300F4B;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     position: absolute;
     top: 0;
     height: 96px;    
 }
-#icon{
+#header #icon{
     margin-left: 5rem;    
 }
-nav{
+#header nav{
     display: flex;
     margin-left: 5rem;
     align-items: center;
     justify-content: space-between;
     width: 479px;
 }
-nav > a{
+#header nav > a{
     color: #D7D7D7;
     font-size: 20px;
 }
-.decoration{
+#header .decoration{
    position: relative;
    top: -4px;
   
 }
-.sign-in{
+#header .sign-in{
 background-color: #FFFFFF;
 color: #1B1B1B;
 border: 1px solid #FFCE31;
@@ -51,22 +52,24 @@ cursor: pointer;
 font-size: 16px;
 font-weight: 700;
 }
-
+#header .menu{
+    display: none;
+}
 /* styling the footer */
 #footer{
     background-color: #310F4C;
     border-radius: 40px 40px 0px 0px;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 
-.first-section{
+#footer .first-section{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.first-section div{
+#footer .first-section div{
     display: block;
     margin-left: 5rem;
     margin-right: 5rem;
@@ -75,35 +78,119 @@ font-weight: 700;
     line-height: 2rem;
     width: 15%;   
 }
-.first-section div h1{
+#footer .first-section div h1{
     font-size: 24px;
     font-weight: 600;
     line-height: 36px;
 }
-.first-section div p{
+#footer .first-section div p{
     font-size: 19px;
     font-weight: 400;
     line-height: 30px;
 }
-.first-section img{
+#footer .first-section img{
     margin-top: 15px;
     margin-right: 13px;
 }
-fieldset{
+#footer .second-section fieldset{
     width: 12%;
     text-align: center;
-    margin: 1rem 0 1rem 5rem;
+    margin: 0 0 1rem 5rem;
     padding: 14px 30px;
     color: white;
     font-size: 16px;
     border: 1px solid #FFFFFF;
     border-radius: 4px;
 }
+#footer .second-section{
+    /* display: flex;
+    flex-direction: column; */
+    color: white;
+}
+#footer .second-section .logo{
+    width: 150px;
+    margin-left: 5rem;
+    margin-bottom: 1.2rem;
+}
+#footer hr{
+    border: 0;
+}
+#footer .all-right{
+    float: right;
+    color: #ffffff;
+    margin: -3rem 7rem 0 0;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+
+/*responsiveness*/
+@media screen and (max-width: 320px){
+
+/*styling the header*/
+#header{
+    display: flex;
+    /* object-fit: cover; */
+}
+#header #icon{
+    margin-left: 1rem;   
+}
+#header nav{
+    display: none;
+}
+#header .sign-in{
+    display: none;
+}
+#header .menu{
+    width: 100%;
+    height: 100%;
+}
+
+/*styling the footer*/
+#footer .first-section div{
+    display: block;
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+    padding-top: 4rem;
+    width: 42%;  
+} 
+#footer .first-section div h1{
+    font-size: 18px;
+    line-height: 40px;
+}
+#footer .first-section div p{
+    font-size: 10.5px;
+    line-height: 25px;
+}
+#footer .first-section img{
+    width: 15px;
+    margin-top: 5px;
+}
 .second-section{
     display: flex;
-    justify-content: space-between;
-    margin: 1rem 7rem 1.5rem 3rem;
-    color: white;
-    font-size: 20px;
-    font-weight: 400;
+    flex-direction: row-reverse;
+    /* justify-content: space-between; */
+    width: 100%;
+    margin-top: 4rem;
+}
+
+#footer .second-section .logo{
+    width: 100px;
+}
+#footer .second-section fieldset{
+    width: 42%;
+    margin: 0 1rem 1rem 5rem;
+    padding: 14px 40px;
+    font-size: 10px;
+}
+#footer hr{
+    border: 0.5px dashed #D7D7D7;
+}
+#footer .all-right{
+    margin: 0.5rem 6rem 0.5rem 3rem;
+    font-size: 15px;
+    line-height: 40px;
+}
+
 }
