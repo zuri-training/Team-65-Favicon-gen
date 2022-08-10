@@ -9,7 +9,8 @@ CustomUser.UserModel = get_user_model()
 
 def register(request):
     if request.user.is_authenticated:
-        messages.info(request, "You are already Logged In! Log out to create a new account.")
+        messages.info(
+            request, "You are already Logged In! Log out to create a new account.")
         return redirect('core:dashboard')
     if request.method == 'POST':
         first_name = request.POST['first_name']
@@ -34,7 +35,8 @@ def register(request):
                     profile_pic = request.FILES['profile_pic']
                     user.profile_pic = profile_pic
                 user.save()
-                login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+                login(request, user,
+                      backend='django.contrib.auth.backends.ModelBackend')
                 messages.success(request, 'Registration Successful')
                 return redirect('core:dashboard')
         else:
@@ -46,14 +48,20 @@ def register(request):
 
 def login_user(request):
     if request.user.is_authenticated:
-        messages.info(request, "You are already Logged In! Log out to create a new account.")
+        messages.info(
+            request, "You are already Logged In! Log out to create a new account.")
         return redirect('core:dashboard')
     if request.method == 'POST':
         username = request.POST['username']
         password1 = request.POST['password1']
+        rememberMe = request.POST.get("rememberMe")
         user = authenticate(request, username=username, password=password1)
         if user is not None:
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            if not rememberMe:
+                request.session.set_expiry(0)
+            else:
+                rememberMe = "False"
             # Redirect to a success page.
             return redirect('core:dashboard')
         else:
