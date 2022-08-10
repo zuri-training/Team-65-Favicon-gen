@@ -38,8 +38,5 @@ Below is each team member with a list of corresponding tasks
 1.  Design sketches for login/sign up screens for desktop.
 
 
-##  Olumide
-
-
 ##  Momo
 1.  Clean up Group 3 style guide
