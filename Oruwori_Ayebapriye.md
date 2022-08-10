@@ -8,3 +8,7 @@
 
 4. I collaborated with @Jaylucia and @Of-Momo to design the low-fidelity wireframes for ICONATOR. https://github.com/zuri-training/Team-65-Favicon-gen/issues/49 Here is the Figma link https://www.figma.com/file/oNEE1MXe1vBHUsaem55CfX/ICONATOR-(Group-65)?node-id=1%3A4
 
+5. Designed the User Profile mobile and desktop screens https://github.com/zuri-training/Team-65-Favicon-gen/issues/15 
+
+
+
