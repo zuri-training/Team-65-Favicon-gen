@@ -1,0 +1,32 @@
+{% load static %}
+<header id="header">
+    <a href="{% url 'core:dashboard' %}"><img src="{% static 'images/logo.svg' %}" alt="Iconator" id="icon" /></a>
+    <nav class="header_nav">
+        <a href="{% url 'core:upload' %}">
+            <p>Favicon <img src="{% static 'images/decorative_icon.svg' %}" alt="just_decoration" class="decoration"/></p>
+        </a>
+        <a href="{% url 'core:about' %}"><p>About Us</p></a>
+        <a href="#"><p>Library</p></a>
+        <a href="{% url 'core:contact' %}">
+            <p>Help & Support <img src="{% static 'images/decorative_icon.svg' %}" alt="just_decoration" class="decoration"/></p>
+        </a>
+    </nav>
+    {% if request.user.is_authenticated %}
+        <div class="header_user_details">
+            {% if request.user.profile_pic %}
+                <figure class="header_user_img"><img src="{{ request.user.profile_pic.url }}" alt="{{ request.user.first_name }}"/></figure>
+            {% else %}
+                <div class="header_default_user_img">{{ request.user.username.0 }}</div>
+            {% endif %}
+            <div class="header_user_info">
+                <p class="header_fullname">{{ request.user.first_name }} {{ request.user.last_name }} <i class="fa-solid fa-sort-down"></i></p>
+                <p class="header_username">@{{ request.user.username }} <span class="header_active_notification"></span></p>
+            </div>
+        </div>
+    {% else %}
+        <div class="header_auth_btns">
+            <button class="header_auth_btn"><a href="{% url 'accounts:signup' %}">Sign Up</a></button>
+            <button class="header_auth_btn"><a href="{% url 'accounts:login' %}">Sign In</a></button>
+        </div>
+    {% endif %}
+</header>

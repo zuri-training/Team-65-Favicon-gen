@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+{% block custom_style %}
+    <link rel="stylesheet" href="{% static 'css/upload.css' %}">
+{% endblock custom_style %}
+{% block title %}
+    ICONATOR | UPLOAD
+{% endblock title %}
+{% block content %}
+<section class="section_center">
+    <form action="" method="post" class="upload_form" enctype="multipart/form-data">
+        <h1>Create a new favicon</h1>
+        {% if messages %}
+            {% for message in messages %}
+                <h3 class="error_message">{{ message }}</h3>
+            {% endfor %}
+        {% endif %}
+        {% csrf_token %}
+        <label for="imageForm" class="upload_label">
+            <img src="{% static 'images/form_icon.svg' %}" alt="form icon" />
+            <p>Click / Drag and Drop to Upload</p>
+            <input type="file" name="image" id="imageForm" />
+        </label>
+        <div class="preview_upload">
+            <figure class="preview_img"></figure>
+            <button type="submit" class="btn_gold">upload</button>
+        </div>
+    </form>
+    <span class="info">upload an image/icon in (PNG, JPG, WEB) and convert to usable favicons (ICO)</span>
+</section>
+<section class="section_center favicons">
+    <h1 class="list_text">my favicons</h1>
+    <div class="favicons_list">
+        {% for image in images %}
+            <article class="favicon">
+                <figure class="favicon_img">
+                    <img src="{{ image.image.image_url }}" alt="{{ image.image.image_name }}" />
+                </figure>
+                <div class="favicon_info">
+                    <h2>{{ image.image.image_name }}</h2>
+                    <div class="btns">
+                        <button class="btn_gold">
+                            <a href="{{ image.favicon.favicon_zip_url }}" download>download <img class="btn_icon" src="{% static 'images/download_icon.svg' %}" alt="download icon" /></a>
+                        </button>
+                        <button class="btn_gold">
+                            <a href="{% url 'core:delete-favicon' image.image.pk %}">delete <img class="btn_icon" src="{% static 'images/delete_icon.svg' %}" alt="delete icon" /></a>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        {% endfor %}
+        <figure class="style_icon">
+            <img src="{% static 'images/arrow_icon.svg' %}" alt="arrow_icon" />
+        </figure>
+    </div>
+</section>
+<section class="section_center">
+    <div class="favicon_instructions">
+        <h2>How to use your Favicon</h2>
+        <p>
+            First, use the download button to download the zip file for your
+            favicon, then extract the files. Each zip file contains:
+        </p>
+        <ul>
+            <li>favicon512x512.png</li>
+            <li>favicon192x192.png</li>
+            <li>favicon180x180.png</li>
+            <li>favicon32x32.png</li>
+            <li>favicon16x16.png</li>
+            <li>favicon.ico</li>
+            <li>site.webmanifest</li>
+        </ul>
+        <p>Then place the files in the root directory of your website.</p>
+        <p>
+            Next, copy the following link tags and paste them into the head of
+            your HTML.
+        </p>
+        <div class="html_code">
+            <code id="copy_text">
+                <span>&lt;link rel="apple-touch-icon" sizes="180x180" href="/favicon180x180.png"&gt;</span><br/>
+                <span>&lt;link rel="icon" sizes="32x32" href="/favicon32x32.png"&gt;</span><br/>
+                <span>&lt;link rel="icon" sizes="16x16" href="/favicon16x16.png"&gt;</span><br/>
+                <span>&lt;link rel="manifest" href="/site.webmanifest"&gt;</span>
+            </code>
+        </div>
+        <button class="btn_gold" id="copy_btn">copy</button>
+    </div>
+</section>
+{% endblock content %}
+{% block custom_js %}
+    <script src="{% static 'js/upload.js' %}"></script>
+{% endblock custom_js %}

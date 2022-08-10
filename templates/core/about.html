@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block custom_style %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock custom_style %}
+{% block title %}
+    ICONATOR | ABOUT US
+{% endblock title %}
+{% block content %}
+    <div role="banner" class="about_top">
+        <h1 class="about_header1">About Us</h1>
+    </div>
+    <section class="about_bottom">
+        <div class="about_paragraph">
+            <p class="about_parag-1">
+                We are Iconator, here to provide the desired generator for that next
+                project.
+            </p>
+            <p class="about_parag-2">
+                Iconator is a free web based tool that enables you to upload images,
+                use text, save and choose from an unlimited library of already
+                designed icons ready for that next big idea.
+            </p>
+        </div>
+        <div class="about_paragraph about_sec-2">
+            <div class="about_rit-parag">
+                <p class="about_parag-3"><q>It always seem impossible until it’s done.</q> -------------- Nelson Mandela</p>
+            </div>
+            <div class="about_wrigle">
+                <img src="{% static 'images/about_arrow.svg' %}" alt="about_arrow" />
+            </div>
+        </div>
+    </section>
+{% endblock content %}
