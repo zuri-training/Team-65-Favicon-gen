@@ -12,3 +12,11 @@
 4.  Create a comprehensive user flow #53: The link to the issue is https://github.com/zuri-training/Team-65-Favicon-gen/issues/53 .
   I was tasked with creating a comprehensive user flow and this is the link to the task: https://www.figma.com/file/oNEE1MXe1vBHUsaem55CfX/ICONATOR-(Group-65)?node-id=1%3A3 .
   
+5.  Contact Us page and About Us page design #14: The link to the issue is https://github.com/zuri-training/Team-65-Favicon-gen/issues/14 .
+  Within our small sub-group,I was tasked to research and design the contact us page of the Iconator website. 
+6.   Mobile Contact Us page and About Us page design #28: The link to the issue is https://github.com/zuri-training/Team-65-Favicon-gen/issues/28 .
+  I also designed the mobile about us page.
+
+  
+The research link: https://docs.google.com/document/d/1aAI-W6hlW99osJFEHeHHsCjRBtJ5MtB4/edit?usp=sharing&ouid=116200026049709901124&rtpof=true&sd=true /
+The Research Plan for Fave Icons app link: https://docs.google.com/document/d/15pBCU0C3keQD76ymtvHhbFJ1rJZG3Qlv/edit .
