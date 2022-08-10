@@ -40,3 +40,19 @@ Below is each team member with a list of corresponding tasks
 
 ##  Momo
 1.  Clean up Group 3 style guide
+
+## Hatim Matsue (timmy_3000)
+1.  Create Database Schema#8:
+https://github.com/zuri-training/Team-65-Favicon-gen/issues/8
+
+1.  Handled DevOps:
+
+1.  Mobile landing page design#26:
+https://github.com/zuri-training/Team-65-Favicon-gen/issues/26
+
+1.  Landing page design#12:
+https://github.com/zuri-training/Team-65-Favicon-gen/issues/12
+
+*  Design
+*  Drag and drop
+*  Cards
