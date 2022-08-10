@@ -4,6 +4,6 @@
 
 I di the header and designed some
 
-1. Did the README.md documentation
+1. Did the README.md documentation (#20)[https://github.com/zuri-training/Team-65-Favicon-gen/issues/20]
 
 2. 
