@@ -46,6 +46,7 @@ Below is each team member with a list of corresponding tasks
 https://github.com/zuri-training/Team-65-Favicon-gen/issues/8
 
 1.  Handled DevOps:
+https://github.com/zuri-training/Team-65-Favicon-gen/issues/61
 
 1.  Mobile landing page design#26:
 https://github.com/zuri-training/Team-65-Favicon-gen/issues/26
