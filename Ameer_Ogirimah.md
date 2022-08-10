@@ -2,8 +2,8 @@
 
 1. Develop About Us page:The link to the issue is https://github.com/zuri-training/Team-65-Favicon-gen/issues/20 .
 
-I di the header and designed some
+1.  I di the header and designed some
 
-1. Did the README.md documentation (#20)[https://github.com/zuri-training/Team-65-Favicon-gen/issues/20]
+1. Did the README.md documentation https://github.com/zuri-training/Team-65-Favicon-gen/issues/20
 
 2. 
