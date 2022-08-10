@@ -58,7 +58,7 @@ https://github.com/zuri-training/Team-65-Favicon-gen/issues/12
 *  Drag and drop
 *  Cards
 
-##Goodness 
+## Goodness 
 1. Desktop view header and footer:
  https://github.com/zuri-training/Team-65-Favicon-gen/issues/22
 
