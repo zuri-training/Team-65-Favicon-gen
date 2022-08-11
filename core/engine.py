@@ -23,7 +23,7 @@ cloudinary.config(
 
 def createFavicons(img, imgid, zipid):
     # create temporary storage
-    image_path = '/tempstorage'
+    image_path = 'tempstorage'
     os.mkdir(image_path)
     # loop through sizes, convert image into different sizes and formats, save converted files to tempstorage
     sizes = [(16, 16), (32, 32), (180, 180), (192, 192), (512, 512)]
@@ -40,15 +40,15 @@ def createFavicons(img, imgid, zipid):
         for x in os.listdir():
             if x != 'favicon_image.png':
                 zip.write(x)
-        os.chdir('/core')
+        os.chdir(root/'core')
         zip.write('site.webmanifest')
         zip.close()
     # upload image and zipped file to cloudinary and retrieve url
-    os.chdir('/')
+    os.chdir(root)
     responseImage = cloudinary.uploader.upload(
-        '/tempstorage/favicon_image.png', public_id=imgid)
+        root/'tempstorage/favicon_image.png', public_id=imgid)
     responseZip = cloudinary.uploader.upload(
-        '/tempstorage/favicon.zip', public_id=zipid, resource_type='auto')
+        root/'tempstorage/favicon.zip', public_id=zipid, resource_type='auto')
     res_img = responseImage['secure_url']
     res_zip = responseZip['secure_url']
     # delete tempstorage

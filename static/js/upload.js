@@ -3,6 +3,7 @@ const uploadInput = document.querySelector('#imageForm');
 const previewBox = document.querySelector('.preview_img');
 const copyText = document.querySelector('#copy_text');
 const copyBtn = document.querySelector('#copy_btn');
+const isUploadingText = document.querySelector('.isUploading');
 
 // DRAG AND DROP FUNCTIONALITY
 function previewFile(file) {
@@ -29,6 +30,7 @@ function uploadFile(file) {
     xhr.open('POST', '/my-favicons/');
     xhr.setRequestHeader('X-CSRFToken', token);
     xhr.send(formData);
+    isUploadingText.innerHTML = 'Uploading...';
 }
 function highlightZone(e) {
     e.preventDefault();
