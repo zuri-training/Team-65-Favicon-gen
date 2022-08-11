@@ -33,3 +33,58 @@ The following is required from every user before you can access the features of 
 1.  Country
 
 Click [Signup](www.iconator.com/signup) to signup on the platform and [Signin](www.iconator.com/signin) to login if you already have an account
+
+## Repository Tree Structure
+
+```
+├── README.md
+├── accounts
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── core
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── engine.py
+│   ├── migrations
+│   ├── models.py
+│   ├── site.webmanifest
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── favicon_gen
+│   ├── __init__.py
+│   ├── accounts
+│   ├── asgi.py
+│   ├── core
+│   ├── favicon_gen
+│   ├── frontend
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── local
+│   ├── bin
+│   ├── lib
+│   └── pyvenv.cfg
+├── manage.py
+├── my_file.py
+├── requirements.txt
+├── static
+│   ├── css
+│   ├── images
+│   └── js
+└── templates
+    ├── accounts
+    ├── base.html
+    ├── core
+    ├── footer.html
+    └── navbar.html
+```
+
+The more detailed structure can be found [here]()
