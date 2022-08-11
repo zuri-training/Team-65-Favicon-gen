@@ -7,28 +7,86 @@
     ICONATOR | ABOUT US
 {% endblock title %}
 {% block content %}
-    <div role="banner" class="about_top">
-        <h1 class="about_header1">About Us</h1>
+<div class="about_heading_container">
+    <h1 class="about_header1">About Us</h1>
+    <img src="about_img/hero_design2.svg" alt="" class="about_header_img" />
+</div>
+<section class="about_section about_sec1">
+    <div class="about_sec1_group">
+        <h2 class="about_header2">Who We Are</h2>
+        <p class="about_sec1_text">
+            We are designers, developers and engineers. We believe that from
+            quality comes the best.
+        </p>
+        <p class="about_sec1_text">
+            At Iconator, we make the most unfortable experiences in life by
+            providing a product and service that offers a complete range of
+            features which best serves our customer’s needs.
+        </p>
+        <p class="about_sec1_text">
+            We’re thinking deeply not only to attune our customer’s needs and
+            expectations but to seek how, learn and strive for personal and
+            professional growth.
+        </p>
+        <p class="about_sec1_text">
+            We make an effort with a passion and commitment to helping you and
+            others to bring their vision to life.
+        </p>
     </div>
-    <section class="about_bottom">
-        <div class="about_paragraph">
-            <p class="about_parag-1">
-                We are Iconator, here to provide the desired generator for that next
-                project.
-            </p>
-            <p class="about_parag-2">
-                Iconator is a free web based tool that enables you to upload images,
-                use text, save and choose from an unlimited library of already
-                designed icons ready for that next big idea.
-            </p>
-        </div>
-        <div class="about_paragraph about_sec-2">
-            <div class="about_rit-parag">
-                <p class="about_parag-3"><q>It always seem impossible until it’s done.</q> -------------- Nelson Mandela</p>
-            </div>
-            <div class="about_wrigle">
-                <img src="{% static 'images/about_arrow.svg' %}" alt="about_arrow" />
-            </div>
-        </div>
-    </section>
+    <div class="about_spirit_img_container">
+        <img
+            class="about_spirit_img"
+            src="about_img/team_spirit.png"
+            alt="team_spirit.svg"
+        />
+    </div>
+</section>
+<section class="about_unique_reality">
+    <div class="about_unique_reality_text">
+        <p class="about_unique_text">Our mission is to provide a</p>
+        <strong class="about_unique_text_strong">Unique</strong>
+        <p class="about_unique_text">way to turn you vision into</p>
+        <strong class="about_unique_text_strong">Reality</strong>
+    </div>
+</section>
+<section class="about_section about_sec2">
+    <div class="about_h2_container">
+        <h2 class="about_header2">Our Values</h2>
+    </div>
+    <img
+        src="about_img/team_work.png"
+        alt="team_work.png"
+        class="about_work_img"
+    />
+    <div class="about_sec2_cont1">
+        <h3 class="about_text_header3">We are Teamwork</h3>
+        <p class="about_sec2_text">
+            With empathy and humility, we seek win-for-all solutions by working
+            together across boundaries, to meet the needs of our customers.
+        </p>
+    </div>
+    <div class="about_sec2_cont2">
+        <h3 class="about_text_header3">We Innovate</h3>
+        <p class="about_sec2_text">
+            A culture of innovation and continous improvement, we seek the facts
+            and provide insights to help us develop a product that best serve our
+            customer’s needs.
+        </p>
+    </div class="about_sec2_cont3">
+    <div>
+        <h3 class="about_text_header3">Quantity</h3>
+        <p class="about_sec2_text">
+            We do well to provide an outstanding product and service that
+            together, deliver premium value to our customers.
+        </p>
+    </div>
+    <div class="about_sec2_cont4">
+        <h3 class="about_text_header3">We are Diverse</h3>
+        <p class="about_sec2_text">
+            Attract, develop and grow talents that reflect the full diversity,
+            inclusion and belonging of society.
+        </p>
+    </div>
+</section>
+
 {% endblock content %}
