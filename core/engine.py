@@ -23,7 +23,7 @@ cloudinary.config(
 
 def createFavicons(img, imgid, zipid):
     # create temporary storage
-    image_path = 'tempstorage'
+    image_path = root/'tempstorage'
     os.mkdir(image_path)
     # loop through sizes, convert image into different sizes and formats, save converted files to tempstorage
     sizes = [(16, 16), (32, 32), (180, 180), (192, 192), (512, 512)]
