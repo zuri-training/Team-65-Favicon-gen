@@ -8,13 +8,28 @@
 {% endblock title %}
 {% block content %}
 <section class="section_center">
+    {% if messages %}
+          {% for message in messages %}
+              {% if message.tags == 'info' %}
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      <center><strong>{{ message }}</strong></center>
+                      <button style="padding-bottom: 5px; padding-top: 20px;" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+              {% elif message.tags == 'success' %}
+                  <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <center><strong>{{ message }}</strong></center>
+                      <button style="padding-bottom: 5px; padding-top: 20px;" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+              {% endif %}
+          {% endfor %}
+      {% endif %}
     <form action="" method="post" class="upload_form" enctype="multipart/form-data">
         <h1>Create a new favicon</h1>
-        {% if messages %}
-            {% for message in messages %}
-                <h3 class="error_message">{{ message }}</h3>
-            {% endfor %}
-        {% endif %}
+<!--        {% if messages %}-->
+<!--            {% for message in messages %}-->
+<!--                <h3 class="error_message">{{ message }}</h3>-->
+<!--            {% endfor %}-->
+<!--        {% endif %}-->
         {% csrf_token %}
         <label for="imageForm" class="upload_label">
             <img src="{% static 'images/form_icon.svg' %}" alt="form icon" />

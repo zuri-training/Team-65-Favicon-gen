@@ -38,7 +38,7 @@ def imageUploadView(request):
                 favicon.save()
                 return redirect('core:upload')
             except:
-                messages.error(request, 'Image not provided')
+                messages.info(request, 'Image not provided')
                 return render(request, 'core/upload.html')
         else:
             messages.error(request, 'Image not provided')
