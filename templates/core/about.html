@@ -9,7 +9,7 @@
 {% block content %}
 <div class="about_heading_container">
     <h1 class="about_header1">About Us</h1>
-    <img src="about_img/hero_design2.svg" alt="" class="about_header_img" />
+    <img src="{% static 'images/about_design2.svg' %}" alt="about_design.svg" class="about_header_img" />
 </div>
 <section class="about_section about_sec1">
     <div class="about_sec1_group">
@@ -36,7 +36,7 @@
     <div class="about_spirit_img_container">
         <img
             class="about_spirit_img"
-            src="about_img/team_spirit.png"
+            src="{% static 'images/about_spirit.png' %}"
             alt="team_spirit.svg"
         />
     </div>
@@ -54,7 +54,7 @@
         <h2 class="about_header2">Our Values</h2>
     </div>
     <img
-        src="about_img/team_work.png"
+        src="{% static 'images/about_work.png' %}"
         alt="team_work.png"
         class="about_work_img"
     />
@@ -88,5 +88,4 @@
         </p>
     </div>
 </section>
-
 {% endblock content %}
