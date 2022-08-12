@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sign-up.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>Sign-Up Page</title>
+
+  
+</head>
+<body>
+    <div class="grid">
+        <div class="left">
+            <img src="sign_up_images/signup_aside-image.png" alt="aside-image">
+        </div>
+
+        <div class="right">
+    
+            
+            <form class="login-form" action="submit">
+
+                <h1>SIGN UP</h1>  
+                <label for="fullname">Full Name
+                <input type="text" required="required" class="form-input"/>
+                </label>
+            
+                <label for="username">Username
+                <input type="text" required="required" class="form-input"/>
+                </label>
+            
+                <label for="email">Enter Email Address
+                <input type="email" required="required" class="form-input"/>
+                </label>
+
+            
+                <label id="pswd" for="password">Enter Password
+                <input class="form-input" type="password" id="password" name = "password" onChange="onChange()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
+                <i class="bi bi-eye-slash" id="togglePassword"></i>
+                </label>
+                
+            
+                <label id="pswd" for="password">Confirm Password
+                <input class="form-input" type="password" id="confirm_password" name = "confirm_password" onChange="onChange()"/>
+                <i class="bi bi-eye-slash" id="togglePassword"></i>
+                </label>
+
+
+                <div id="message">
+                    <h3>Password must contain the following:</h3>
+                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                </div>
+
+                <div>
+                    <button class="form-button-one" type="submit">GET STARTED</button>
+                </div>
+                <div class="or">
+                    <p>OR</p>
+                </div>
+
+                <div class="btn-1">
+                    <button class="form-button-two" type="submit">CONTINUE WITH GOOGLE <img src="sign_up_images/google_icon.svg"></button>
+                </div>
+
+                <div class="btn-1">
+                    <button class="form-button-two" type="submit">CONTINUE WITH FACEBOOK <img src="sign_up_images/facebook_icon.svg"></button>
+                </div>
+
+            </form>
+            <div class="form-footer">
+                <p>Already have an account?  <a href="#" >Sign-in</a></p>
+            </div>
+     
+        </div>
+    </div>
+
+
+   <script src="./sign-up.js"></script>
+    
+</body>
+</html>
