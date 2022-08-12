@@ -21,7 +21,10 @@ def imageUploadView(request):
         imgs.append(img)
     if request.method == 'POST':
         list(messages.get_messages(request))
-        if request.FILES or request.POST:
+        if request.POST['image'] == '' or not request.FILES['image']:
+            messages.info(request, 'Image not provided')
+            return render(request, 'core/upload.html')
+        else:
             image = request.FILES['image'] or request.POST['image']
             imgid = f'{request.user}_image-{secrets.token_urlsafe(10)}'
             zipid = f'{request.user}_favicon-{secrets.token_urlsafe(10)}'
@@ -36,9 +39,6 @@ def imageUploadView(request):
             )
             favicon.save()
             return redirect('core:upload')
-        else:
-            messages.error(request, 'Image not provided')
-            return render(request, 'core/upload.html')
     else:
         return render(request, 'core/upload.html', {'images': imgs})
 

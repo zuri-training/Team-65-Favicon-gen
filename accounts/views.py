@@ -13,6 +13,7 @@ def register(request):
             request, "You are already Logged In! Log out to create a new account.")
         return redirect('core:dashboard')
     if request.method == 'POST':
+        list(messages.get_messages(request))
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
         username = request.POST['username']
@@ -52,6 +53,7 @@ def login_user(request):
             request, "You are already Logged In! Log out to create a new account.")
         return redirect('core:dashboard')
     if request.method == 'POST':
+        list(messages.get_messages(request))
         username = request.POST['username']
         password1 = request.POST['password1']
         rememberMe = request.POST.get("rememberMe")

@@ -12,6 +12,7 @@
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/header&footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/messages.css' %}">
     {% block custom_style %}
     {% endblock custom_style %}
     <!-- FAVICON -->
@@ -32,5 +33,17 @@
     {% include 'footer.html' %}
     {% block custom_js %}
     {% endblock custom_js %}
+    <script src="{% static 'js/header_footer.js' %}"></script>
+    <script>
+        const messages = document.querySelector('.alert_message');
+        if (messages) {
+            setTimeout(() => {
+                messages.classList.add('message_fade_out');
+                setTimeout(() => {
+                    messages.style.visibility = 'hidden';
+                }, 500);
+            }, 4000);
+        }
+    </script>
 </body>
 </html>

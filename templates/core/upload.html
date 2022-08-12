@@ -8,13 +8,21 @@
 {% endblock title %}
 {% block content %}
 <section class="section_center">
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'info' %}
+                <div class="alert_message alert_danger">
+                    <strong>{{ message }}</strong>
+                </div>
+            {% elif message.tags == 'success' %}
+                <div class="alert_message alert_success">
+                    <strong>{{ message }}</strong>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
     <form action="" method="post" class="upload_form" enctype="multipart/form-data">
         <h1>Create a new favicon</h1>
-        {% if messages %}
-            {% for message in messages %}
-                <h3 class="error_message">{{ message }}</h3>
-            {% endfor %}
-        {% endif %}
         {% csrf_token %}
         <label for="imageForm" class="upload_label">
             <img src="{% static 'images/form_icon.svg' %}" alt="form icon" />
