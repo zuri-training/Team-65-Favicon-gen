@@ -14,7 +14,7 @@ a {
     align-items: center;
     justify-content: space-between;
     padding-inline: 5rem;
-    height: 96px;    
+    height: 96px;
 }
 .header_nav {
     display: flex;
