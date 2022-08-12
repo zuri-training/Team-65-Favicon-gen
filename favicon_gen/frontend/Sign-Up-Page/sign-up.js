@@ -1,4 +1,4 @@
-//toggle-password-visibility
+//js code for toggle-password-visibility
 const togglePassword = document.querySelector("#togglePassword");
 const password = document.querySelector("#password");
 
@@ -14,7 +14,8 @@ togglePassword.addEventListener("click", function () {
 
 
 
-// password-validation
+// javascript code for password and confirm password validation
+
 
 function onChange() {
     const password = document.querySelector('input[name=password]');
