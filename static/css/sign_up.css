@@ -1,9 +1,10 @@
 
-body{
-  font-family: 'Manrope';
-  width: 100%;
-  background-color: #fff;
-  Font-size: 16px;
+
+html, 
+body {
+    margin: 0;
+    box-sizing: 0;
+    font-family: 'Manrope', sans-serif;
 }
 
 .signup_container {
