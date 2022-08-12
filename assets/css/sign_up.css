@@ -35,11 +35,17 @@ h1{
 }
 .form-input{
   background: #ffffff;
-  padding: .5rem 1rem;
+  padding: .7rem 1.3rem;
   width: 100%;
   border-radius: 4px;
   border: 1px solid #611E97;
-  font-size: 20px;
+  font-size: 18px;
+}
+.form-input:focus {
+  outline: none;
+  padding: 12px;
+  font-size: 18px;
+  border: 2px solid #611e97;
 }
 #message {
   display:none;
@@ -146,4 +152,9 @@ label{
 .form-footer a{
   color: #4787F3;
   text-decoration-line: underline;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  box-shadow: 0px 8px 8px -8px rgba(1, 1, 1, 0.8);
 }
