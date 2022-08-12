@@ -49,8 +49,8 @@ def register(request):
 
 def login_user(request):
     if request.user.is_authenticated:
-        messages.info(
-            request, "You are already Logged In! Log out to create a new account.")
+        # messages.info(
+        #     request, "You are already Logged In! Log out to create a new account.")
         return redirect('core:dashboard')
     if request.method == 'POST':
         list(messages.get_messages(request))
