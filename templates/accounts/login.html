@@ -22,7 +22,25 @@
     <div class="containerdiv">
       <div class="flex1">
         <div class="welcome">
+          {% if messages %}
+              {% for message in messages %}
+                  {% if message.tags == 'info' %}
+                      <div class="alert_message alert_danger">
+                        <br>
+                          <strong>{{ message }}</strong>
+                        <br>
+                      </div>
+                  {% elif message.tags == 'success' %}
+                      <div class="alert_message alert_success">
+                        <br>
+                          <strong>{{ message }}</strong>
+                        <br>
+                      </div>
+                  {% endif %}
+              {% endfor %}
+          {% endif %}
           <div class="pad">
+            <br>
             <h2 class="signin_sbt1">WELCOME BACK</h2>
             <p class="signin_details">Please enter your details</p>
           </div>
@@ -42,7 +60,7 @@
                 <input type="checkbox" value="lsRememberMe" id="rememberMe" />
                 <label id="myLabel" for="rememberMe">Remember me</label>
               </div>
-              <a style="color: #FFCE31; font-size: 18px; line-height: 24px;" id="fg" href="">Forgot Password?</a>
+              <a style="color: #FFCE31; font-size: 18px; line-height: 24px;" id="fg" href="{% url 'accounts:reset_password' %}">Forgot Password?</a>
 
             </div>
             <div class="marg">
@@ -50,7 +68,7 @@
               <button style="height: 60px; font-size: 18px; font-style: bold;" id="click" onclick="lsRememberMe()" type="submit">LOGIN</button>
             </div>
             <div id="para1">
-              <p>Don't have an account? <a style="color: #FFCE31; font-size: 18px; line-height: 24px;" id="span1" href="{% url 'accounts:signup' %}">Sign Up</a></p>
+              <p>Don't have an account? <a style="color: #FFCE31; align-self:right; font-size: 18px; line-height: 24px;" id="span1" href="{% url 'accounts:signup' %}">Sign Up</a></p>
             </div>
 
           </form>
