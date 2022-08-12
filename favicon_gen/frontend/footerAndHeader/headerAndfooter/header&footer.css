@@ -126,7 +126,7 @@ font-weight: 700;
 
 
 /*responsiveness*/
-@media screen and (max-width: 320px){
+@media screen and (max-width: 768px){
 
 /*styling the header*/
 #header{
@@ -141,10 +141,6 @@ font-weight: 700;
 }
 #header .sign-in{
     display: none;
-}
-#header .menu{
-    width: 100%;
-    height: 100%;
 }
 
 /*styling the footer*/
