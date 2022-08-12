@@ -1,0 +1,6 @@
+Your HTML, CSS and maybe Javascript files should be here
+To Upload the completed page, follow the following instruction:
+    1. first run 'git checkout frontend' to move to the frontend branch
+    2. 'git add' only the files you added to this folder.
+    3. 'git commit' it
+    4. Then 'git push origin frontend' to make a pull request to the frontend branch
