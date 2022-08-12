@@ -9,4 +9,4 @@
 1. Created Core Models("Image" and "Favicon_Zip) [https://github.com/zuri-training/Team-65-Favicon-gen/pull/1#issue-1322353903]
 2. Developed Deskstop SignIn Page [https://github.com/zuri-training/Team-65-Favicon-gen/pull/23#issue-1329991618]
 3. Wrote Project documentation [https://docs.google.com/document/d/1wZWKZjfOFX8Cf89RNFg4mYW9l3s2EkKoCXjec7odq3Y/edit?usp=sharing]
-4. Developed Mobile SignIn Page 
+4. Developed Mobile SignIn Page. I pushed directly to frontend branch as instructed.  [https://github.com/zuri-training/Team-65-Favicon-gen/issues/41#issuecomment-1212674907]
