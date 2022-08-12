@@ -1,16 +1,17 @@
-let browse = document.getElementById("index_browse");
 let generate = document.getElementById("index_generate");
+
+let drop_zone = document.getElementById("index_drop_zone");
+
 
 let input = document.createElement('input');
 input.type = 'file';
 input.name = 'uploaded_image';
 
-browse.addEventListener("click", () => {
+
+drop_zone.addEventListener("click", () => {
     input.click();
 });
 
-
-let drop_zone = document.getElementById("index_drop_zone");
 
 drop_zone.addEventListener("drop", (ev) => {
     ev.preventDefault();
