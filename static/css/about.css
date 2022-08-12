@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+}
+
+.about_unique_reality {
+    background: url("about_img/about_trouble.png") center/cover no-repeat;
+    height: 310px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 8rem;
+    margin-bottom: 5rem;
+}
+
+.about_heading_container {
+    padding: 5rem 0 3rem 7rem;
+}
+
+.about_header1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #51197E;
+    text-align: left;
+    margin-top: 3rem;
+}
+
+.about_header2,
+.about_text_header3 {
+    color: #51197E;
+}
+
+.about_sec1_group h2 {
+    padding: 2rem;
+}
+
+
+.about_section {
+    padding: 3rem;
+}
+
+.about_sec1 {
+    display: flex;
+}
+
+.about_sec1_text {
+    padding: 1rem;
+    line-height: 30px;
+}
+
+.about_unique_reality {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about_unique_text {
+    display: inline-flex;
+    color: white;
+}
+
+.about_unique_text_strong {
+    display: inline-flex;
+    color: #FFCE31;
+}
+
+.about_sec2 {
+    display: grid;
+    grid-template-areas:
+        'header header header'
+        'image a c'
+        'image b d';
+    gap: 4rem;
+}
+
+.about_h2_container {
+    grid-area: header;
+    color: #51197E;
+    text-align: center;
+    margin: 2rem;
+}
+
+.about_work_img {
+    grid-area: image;
+}
+
+.about_sec2_cont1 {
+    grid-area: a;
+}
+
+.about_sec2_cont2 {
+    grid-area: c;
+}
+
+.about_sec2_cont3 {
+    grid-area: b;
+}
+
+.about_sec2_cont4 {
+    grid-area: d;
+}
+
+.about_text_header3 {
+    margin: 1rem;
+}
+
+.about_sec2_text {
+    line-height: 30px;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+
+    .about_heading_container {
+        padding: 5rem 0 3rem 0;
+    }
+
+
+    .about_header1,
+    .about_header_img {
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about_sec1 {
+        flex-direction: column-reverse;
+    }
+
+    .about_sec2 {
+        grid-template-areas:
+            'image'
+            'header'
+            'a'
+            'c'
+            'b'
+            'd';
+    }
+
+    .about_text_header3,
+    .about_sec2_text {
+        text-align: center;
+    }
+
+
+}

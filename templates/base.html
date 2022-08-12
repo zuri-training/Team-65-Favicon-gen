@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FONT -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800" />
+    <!-- FONT AWESOME ICONS INCASE WE NEED THEM -->
+    <script src="https://kit.fontawesome.com/5ca15c60cd.js" crossorigin="anonymous"></script>
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header&footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/messages.css' %}">
+    {% block custom_style %}
+    {% endblock custom_style %}
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon180x180.png' %}">
+    <link rel="icon" sizes="32x32" href="{% static 'images/favicon32x32.png' %}">
+    <link rel="icon" sizes="16x16" href="{% static 'images/favicon16x16.png' %}">
+    <link rel="manifest" href="{% static 'images/site.webmanifest' %}">
+    <!-- TITLE -->
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+</head>
+<body class="container mx-auto bg-blue-50 min-h-screen">
+    {% include "navbar.html" %}
+    {% block content %}
+    {% endblock content %}
+    {% include 'footer.html' %}
+    {% block custom_js %}
+    {% endblock custom_js %}
+    <script src="{% static 'js/header_footer.js' %}"></script>
+    <script>
+        const messages = document.querySelector('.alert_message');
+        if (messages) {
+            setTimeout(() => {
+                messages.classList.add('message_fade_out');
+                setTimeout(() => {
+                    messages.style.visibility = 'hidden';
+                }, 500);
+            }, 4000);
+        }
+    </script>
+</body>
+</html>

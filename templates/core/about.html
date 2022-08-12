@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block custom_style %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock custom_style %}
+{% block title %}
+    ICONATOR | ABOUT US
+{% endblock title %}
+{% block content %}
+<div class="about_heading_container">
+    <h1 class="about_header1">About Us</h1>
+    <img src="about_img/hero_design2.svg" alt="" class="about_header_img" />
+</div>
+<section class="about_section about_sec1">
+    <div class="about_sec1_group">
+        <h2 class="about_header2">Who We Are</h2>
+        <p class="about_sec1_text">
+            We are designers, developers and engineers. We believe that from
+            quality comes the best.
+        </p>
+        <p class="about_sec1_text">
+            At Iconator, we make the most unfortable experiences in life by
+            providing a product and service that offers a complete range of
+            features which best serves our customer’s needs.
+        </p>
+        <p class="about_sec1_text">
+            We’re thinking deeply not only to attune our customer’s needs and
+            expectations but to seek how, learn and strive for personal and
+            professional growth.
+        </p>
+        <p class="about_sec1_text">
+            We make an effort with a passion and commitment to helping you and
+            others to bring their vision to life.
+        </p>
+    </div>
+    <div class="about_spirit_img_container">
+        <img
+            class="about_spirit_img"
+            src="about_img/team_spirit.png"
+            alt="team_spirit.svg"
+        />
+    </div>
+</section>
+<section class="about_unique_reality">
+    <div class="about_unique_reality_text">
+        <p class="about_unique_text">Our mission is to provide a</p>
+        <strong class="about_unique_text_strong">Unique</strong>
+        <p class="about_unique_text">way to turn you vision into</p>
+        <strong class="about_unique_text_strong">Reality</strong>
+    </div>
+</section>
+<section class="about_section about_sec2">
+    <div class="about_h2_container">
+        <h2 class="about_header2">Our Values</h2>
+    </div>
+    <img
+        src="about_img/team_work.png"
+        alt="team_work.png"
+        class="about_work_img"
+    />
+    <div class="about_sec2_cont1">
+        <h3 class="about_text_header3">We are Teamwork</h3>
+        <p class="about_sec2_text">
+            With empathy and humility, we seek win-for-all solutions by working
+            together across boundaries, to meet the needs of our customers.
+        </p>
+    </div>
+    <div class="about_sec2_cont2">
+        <h3 class="about_text_header3">We Innovate</h3>
+        <p class="about_sec2_text">
+            A culture of innovation and continous improvement, we seek the facts
+            and provide insights to help us develop a product that best serve our
+            customer’s needs.
+        </p>
+    </div class="about_sec2_cont3">
+    <div>
+        <h3 class="about_text_header3">Quantity</h3>
+        <p class="about_sec2_text">
+            We do well to provide an outstanding product and service that
+            together, deliver premium value to our customers.
+        </p>
+    </div>
+    <div class="about_sec2_cont4">
+        <h3 class="about_text_header3">We are Diverse</h3>
+        <p class="about_sec2_text">
+            Attract, develop and grow talents that reflect the full diversity,
+            inclusion and belonging of society.
+        </p>
+    </div>
+</section>
+
+{% endblock content %}
