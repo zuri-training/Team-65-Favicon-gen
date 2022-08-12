@@ -144,12 +144,15 @@ font-weight: 700;
 }
 
 /*styling the footer*/
+#footer{
+    width: 100%;
+}
 #footer .first-section div{
     display: block;
-    margin-left: 1rem;
-    margin-right: 0.5rem;
+    margin-left: 4rem;
+    margin-right: -7rem;
     padding-top: 4rem;
-    width: 42%;  
+    width: 46%;  
 } 
 #footer .first-section div h1{
     font-size: 18px;
@@ -166,25 +169,26 @@ font-weight: 700;
 .second-section{
     display: flex;
     flex-direction: row-reverse;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     width: 100%;
     margin-top: 4rem;
 }
 
 #footer .second-section .logo{
     width: 100px;
+    margin-left: 4rem;
 }
 #footer .second-section fieldset{
-    width: 42%;
-    margin: 0 1rem 1rem 5rem;
-    padding: 14px 40px;
+    width: 22%;
+    margin-right: 4rem;
+    padding: 14px 20px;
     font-size: 10px;
 }
 #footer hr{
     border: 0.5px dashed #D7D7D7;
 }
 #footer .all-right{
-    margin: 0.5rem 6rem 0.5rem 3rem;
+    margin: 0.5rem 20rem 0.5rem -10rem;
     font-size: 15px;
     line-height: 40px;
 }
