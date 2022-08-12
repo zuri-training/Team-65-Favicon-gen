@@ -1,62 +1,81 @@
 {% load static %}
 <footer id="footer">
-    <section class="first-section">
-        <div class="footer_cards">
-            <h1>Product</h1>
-            <ul class="footer_card_items">
-                <li>Favicon Generator</li>
-                <li>Favicons for good web starters</li>
-                <li>HTML Code Download</li>
-                <li>Private Policy</li>
-            </ul>
-        </div>
-        <div class="footer_cards">
-            <h1>Company</h1>
-            <ul class="footer_card_items">
-                <li>About</li>
-                <li>Our Team</li>
-                <li>Library</li>
-                <li>Private Policy</li>
-            </ul>
-        </div>
-        <div class="footer_cards">
-            <h1>Help & Support</h1>
-            <ul class="footer_card_items">
-                <li>Iconator Community</li>
-                <li>FAQs</li>
-                <li>Report Bug</li>
-                <li>Resources</li>
-            </ul>
-        </div>
-        <div class="footer_cards">
-            <h1>Contact Us</h1>
-            <ul class="footer_card_items">
-                <li>Contact@iconator.com</li>
-                <li>(+234) 804 6709 389</li>
-                <li>24, Idowu Martins Street, Ikeaja Lagos</li>
-                <li>
-                    <div class="footer_social_icons">
-                        <img src="{% static 'images/facebook_icon.svg' %}" alt="facebook-icon" />
-                        <img src="{% static 'images/instagram_icon.svg' %}" alt="instagram-icon" />
-                        <img src="{% static 'images/twitter_icon.svg' %}" alt="twitter-icon" />
-                        <img src="{% static 'images/youtube_icon.svg' %}" alt="youtube-icon" />
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <section class="footer_subsection">
-        <div class="footer_select_container">
-            <select name="lang" id="footer_lang" class="custom_select">
-                <option value="english(us)" checked>English (US)</option>
-                <option value="english(us)">English (UK)</option>
-                <option value="english(us)">Yoruba</option>
-                <option value="english(us)">Igbo</option>
-            </select>
-        </div>
-        <div class="footer_last_section">
-            <img src="{% static 'images/logo_2.svg' %}" alt="icon2">
-            <p>All rights reserved</p>
-        </div>
-    </section>
+	<section class="first-section">
+		<div class="footer_cards">
+			<h1>Product</h1>
+			<ul class="footer_card_items">
+				<li>Favicon Generator</li>
+				<li>Favicons for good web starters</li>
+				<li>HTML Code Download</li>
+				<li>Private Policy</li>
+			</ul>
+		</div>
+		<div class="footer_cards">
+			<h1>Company</h1>
+			<ul class="footer_card_items">
+				<li>About</li>
+				<li>
+					<a
+						href="https://github.com/zuri-training/Team-65-Favicon-gen/blob/dev/documentation/Team.md"
+						>Our Team</a
+					>
+				</li>
+				<li>Library</li>
+				<li>Private Policy</li>
+			</ul>
+		</div>
+		<div class="footer_cards">
+			<h1>Help & Support</h1>
+			<ul class="footer_card_items">
+				<li>Iconator Community</li>
+				<li>FAQs</li>
+				<li>
+					<a href="{% url 'core:contact' %}">Report Bug</a>
+				</li>
+				<li>Resources</li>
+			</ul>
+		</div>
+		<div class="footer_cards">
+			<h1>Contact Us</h1>
+			<ul class="footer_card_items">
+				<li>Contact@iconator.com</li>
+				<li>(+234) 804 6709 389</li>
+				<li>24, Idowu Martins Street, Ikeaja Lagos</li>
+				<li>
+					<div class="footer_social_icons">
+						<img
+							src="{% static 'images/facebook_icon.svg' %}"
+							alt="facebook-icon"
+						/>
+						<img
+							src="{% static 'images/instagram_icon.svg' %}"
+							alt="instagram-icon"
+						/>
+						<img
+							src="{% static 'images/twitter_icon.svg' %}"
+							alt="twitter-icon"
+						/>
+						<img
+							src="{% static 'images/youtube_icon.svg' %}"
+							alt="youtube-icon"
+						/>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section class="footer_subsection">
+		<div class="footer_select_container">
+			<select name="lang" id="footer_lang" class="custom_select">
+				<option value="english(us)" checked>English (US)</option>
+				<option value="english(us)">English (UK)</option>
+				<option value="english(us)">Yoruba</option>
+				<option value="english(us)">Igbo</option>
+			</select>
+		</div>
+		<div class="footer_last_section">
+			<img src="{% static 'images/logo_2.svg' %}" alt="icon2" />
+			<p>All rights reserved</p>
+		</div>
+	</section>
 </footer>
