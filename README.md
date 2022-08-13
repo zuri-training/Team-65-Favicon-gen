@@ -8,11 +8,11 @@ Users or companies can visit this platform to generate their favicons
 
 ## Tech Stark
 
-* **Backend**
+* [**Backend**](https://github.com/zuri-training/Team-65-Favicon-gen/blob/dev/documentation/Backend.md)
   * Django(framework)
   * Postgres(DBMS)
   * Cloudinary(Image storage)
-* **Frontend**
+* [**Frontend**](https://github.com/zuri-training/Team-65-Favicon-gen/blob/dev/documentation/Frontend.md)
   * HTML
   * CSS
   * javascript
@@ -22,7 +22,7 @@ Users or companies can visit this platform to generate their favicons
 
 *Iconator takes an image, either jpeg, png ......., and creates a folder containing png and ico favicons as well as html code to be used with your website*
 
-To view the [Iconator](www.iconator.com) website, use this [link](www.iconator.com)
+To view the [Iconator](www.iconator.zurifordummies.com) website, use this [link](www.iconator.zurifordummies.com)
 
 The following is required from every user before you can access the features of __Iconator__
 1.  Username
@@ -32,7 +32,7 @@ The following is required from every user before you can access the features of 
 1.  Last name
 1.  Country
 
-Click [Signup](www.iconator.com/signup) to signup on the platform and [Signin](www.iconator.com/signin) to login if you already have an account
+Click [Signup](www.iconator.zurifordummies.com/signup) to signup on the platform and [Signin](www.iconator.zurifordummies.com/signin) to login if you already have an account
 
 ## Repository Tree Structure
 
@@ -87,4 +87,4 @@ Click [Signup](www.iconator.com/signup) to signup on the platform and [Signin](w
     └── navbar.html
 ```
 
-The more detailed structure can be found [here]()
+The more detailed structure can be found [here](https://github.com/zuri-training/Team-65-Favicon-gen/blob/dev/documentation/repo_tree.md)
