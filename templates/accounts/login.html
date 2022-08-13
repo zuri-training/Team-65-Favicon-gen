@@ -1,81 +1,97 @@
-{% extends "base.html" %}
 {% load static %}
 {% load socialaccount %}
 {% providers_media_js %}
-{% block custom_style %}
-  <link rel="stylesheet" href="{% static 'css/signin.css' %}" />
-  <!-- BOOTSTRAP -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
-{% endblock custom_style %}
-{% block title %}
-  ICONATOR | LOGIN
-{% endblock title %}
-{% block content %}
-  <div class="containerdiv">
-    <div class="welcome">
-      {% if messages %}
-          {% for message in messages %}
-              {% if message.tags == 'info' %}
-                  <div class="alert_message alert_danger">
-                    <strong>{{ message }}</strong>
-                  </div>
-              {% elif message.tags == 'success' %}
-                  <div class="alert_message alert_success">
-                    <strong>{{ message }}</strong>
-                  </div>
-              {% endif %} 
-          {% endfor %}
-      {% endif %}
-      <div class="pad">
-        <h2>WELCOME BACK</h2>
-        <p>Please enter your details</p>
-      </div>
-      <form action="" method="POST" class="login_form">
-        {% csrf_token %}
-        <div class="marg">
-          <label style="font-size: 20px; font-style: bold;" for="text">Username</label><br />
-          <input type="text" name="username" id="username" required />
-        </div>
-        <div class="marg">
-          <label  style="font-size: 20px; font-style: bold;" for="password">Password</label><br />
-          <input id="password" type="password" name="password1" required />
-          <i class="bi bi-eye-slash" id="togglePassword"></i>
-        </div>
-        <div class="marg" id="cb">
-          <div class="remember_btn">
-            <input type="checkbox" value="lsRememberMe" id="rememberMe" />
-            <label id="myLabel" for="rememberMe">Remember me</label>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Manrope"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}" />
+    <title>SignIn</title>
+  </head>
+  <body>
+    <div class="containerdiv">
+      <div class="flex1">
+        <div class="welcome">
+          {% if messages %}
+              {% for message in messages %}
+                  {% if message.tags == 'info' %}
+                      <div class="alert_message alert_danger">
+                        <br>
+                          <strong>{{ message }}</strong>
+                        <br>
+                      </div>
+                  {% elif message.tags == 'success' %}
+                      <div class="alert_message alert_success">
+                        <br>
+                          <strong>{{ message }}</strong>
+                        <br>
+                      </div>
+                  {% endif %}
+              {% endfor %}
+          {% endif %}
+          <div class="pad">
+            <br>
+            <h2 class="signin_sbt1">WELCOME BACK</h2>
+            <p class="signin_details">Please enter your details</p>
           </div>
-          <a style="color: #FFCE31; font-size: 18px; line-height: 24px;" id="fg" href="">Forgot Password?</a>
+          <form action="" method="POST">
+            {% csrf_token %}
+            <div class="marg">
+              <label for="text">Username</label><br />
+              <input type="text" name="username" id="username" required />
+            </div>
+            <div class="marg">
+              <label for="password">Password</label><br />
+              <input id="password" type="password" name="password1" required />
+              <i class="bi bi-eye-slash" id="togglePassword"></i>
+            </div>
+            <div class="marg" id="cb">
+              <div>
+                <input type="checkbox" value="lsRememberMe" id="rememberMe" />
+                <label id="myLabel" for="rememberMe">Remember me</label>
+              </div>
+              <a style="color: #FFCE31; font-size: 18px; line-height: 24px;" id="fg" href="{% url 'accounts:reset_password' %}">Forgot Password?</a>
+
+            </div>
+            <div class="marg">
+                <br>
+              <button style="height: 60px; font-size: 18px; font-style: bold;" id="click" onclick="lsRememberMe()" type="submit">LOGIN</button>
+            </div>
+            <div id="para1">
+              <p>Don't have an account? <a style="color: #FFCE31; align-self:right; font-size: 18px; line-height: 24px;" id="span1" href="{% url 'accounts:signup' %}">Sign Up</a></p>
+            </div>
+
+          </form>
+            <a href="{% provider_login_url 'facebook' method='oauth2' %}">
+              <button id="click" style="text-align:center; margin-top: 40px; font-weight: 700; font-size: 16px; font-family: 'Manrope'; line-height: 24px; border:1px solid #611E97; background-color: #ffffff; font-style: normal;">
+                  CONTINUE WITH FACEBOOK
+                  <img src="{% static 'images/facebook_icon2.svg' %}" />
+              </button>
+            </a>
+            <br>
+            <a href="{% provider_login_url 'google' %}">
+                <button id="click" style="text-align:center; margin-top: 40px; font-weight: 700; font-size: 16px; font-family: 'Manrope'; line-height: 24px; border:1px solid #611E97; background-color: #ffffff; font-style: normal;">
+                    CONTINUE WITH GOOGLE
+                    <img src="{% static 'images/google_icon.svg' %}" />
+                </button>
+            </a>
         </div>
-        <div class="marg">
-          <button style="height: 60px; font-size: 18px; font-style: bold;" id="click" onclick="lsRememberMe()" type="submit">LOGIN</button>
-        </div>
-      </form>
-      <div id="para1">
-        <p>Don't have an account? <a style="color: #FFCE31; font-size: 18px; line-height: 24px;" id="span1" href="{% url 'accounts:signup' %}">Sign Up</a></p>
+        <div class="imgdiv">
+            <img id="imgimg" src="{% static 'images/signin_aside-image.png' %}" alt="signinimage" />
+          </div>
       </div>
-      <a href="{% provider_login_url 'facebook' method='oauth2' %}">
-        <button style="height: 60px; width: 512px; margin-top: 40px; padding: 10px; font-weight: 700; font-size: 16px; font-family: 'Manrope'; line-height: 24px; border:1px solid #611E97; background-color: #ffffff; font-style: normal;">
-            CONTINUE WITH FACEBOOK
-            <img src="{% static 'images/facebook_icon2.svg' %}" />
-        </button>
-      </a>
-      <br>
-      <a href="{% provider_login_url 'google' %}">
-          <button style="height: 60px; width: 512px; margin-top: 40px; padding: 10px; font-weight: 700; font-size: 16px; font-family: 'Manrope'; line-height: 24px; border:1px solid #611E97; background-color: #ffffff; font-style: normal;">
-              CONTINUE WITH GOOGLE
-              <img src="{% static 'images/google_icon.svg' %}" />
-          </button>
-      </a>
+
     </div>
-    <div class="imgdiv">
-      <img src="{% static 'images/signin_aside-image.png' %}" alt="signinimage" />
-    </div>
-  </div>
-{% endblock content %}
-{% block custom_js %}
-  <script src="{% static 'js/login.js' %}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-{% endblock custom_js %}
+    <script src="{% static 'js/login.js' %}"></script>
+  </body>
+</html>

@@ -11,12 +11,12 @@
 	ICONATOR | SIGNUP
 {% endblock title %}
 {% block content %}
-	<div class="grid">
-		<div class="left">
-			<img src="{% static 'images/signup_aside-image.png' %}" alt="aside-image" />
+	<div class="signup_container">
+		<div class="signup_img_container">
+			<img src="{% static 'images/signup_aside-image.png' %}" alt="aside-image" class="signup_image" />
 		</div>
-		<div class="right">
-			<div class="login-container">
+		<div class="signup_login_section">
+			<div class="signup_login-container">
 				{% if messages %}
 					{% for message in messages %}
 						{% if message.tags == 'info' %}
@@ -30,64 +30,61 @@
 						{% endif %}
 					{% endfor %}
 				{% endif %}
-				<form class="login-form" action="" method="POST">
+				<form class="signup_login-form" action="" method="POST">
 					{% csrf_token %}
-					<h1>SIGN UP</h1>
-					<label for="fullname">First Name
-						<input type="text" name="first_name" required="required" class="form-input" />
-					</label>
-					<label for="fullname">Last Name
-						<input type="text" name="last_name" required="required" class="form-input" />
+					<h1 class="signup_h1" >SIGN UP</h1>
+					<label for="fullname">Full name
+						<input type="text" name="first_name" required="required" class="signup_form-input" />
 					</label>
 					<label for="username">Username
-						<input type="text" name="username" required="required" class="form-input" />
+						<input type="text" name="username" required="required" class="signup_form-input" />
 					</label>
-					<label for="email">Enter Email Address
-						<input type="email" name="email" required="required" class="form-input" />
+					<label for="email">Email Address
+						<input type="email" name="email" required="required" class="signup_form-input" />
 					</label>
-					<label for="password">Enter Password
-						<input class="form-input" type="password" id="password1" name="password1" onkeyup="check();"
+					<label for="password">Password
+						<input class="signup_form-input" type="password" id="password1" name="password1" onkeyup="check();"
 							pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 							title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
 							required />
 					</label>
 					<label for="password">Confirm Password
-						<input class="form-input" type="password" id="password2" name="password2" onkeyup="check();" />
+						<input class="signup_form-input" type="password" id="password2" name="password2" onkeyup="check();" />
 						<span id="message"></span>
 					</label>
-					<div id="message">
+					<div class="signup_message" id="message">
 						<h3>Password must contain the following:</h3>
-						<p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-						<p id="capital" class="invalid">
+						<p id="letter" class="signup_invalid">A <b>lowercase</b> letter</p>
+						<p id="capital" class="signup_invalid">
 							A <b>capital (uppercase)</b> letter
 						</p>
-						<p id="number" class="invalid">A <b>number</b></p>
-						<p id="length" class="invalid">Minimum <b>8 characters</b></p>
+						<p id="number" class="signup_invalid">A <b>number</b></p>
+						<p id="length" class="signup_invalid">Minimum <b>8 characters</b></p>
 					</div>
 					<div>
-						<button class="form-button-one" type="submit">GET STARTED</button>
+						<button class="signup_form-button-one" type="submit">GET STARTED</button>
 					</div>
-					<div class="or">
-						<p>OR</p>
+					<div class="signup_or_container">
+						<p class="signup_or_text">OR</p>
 					</div>
 				</form>
-				<div class="btn-1">
+				<div class="signup_btn-1">
 					<a href="{% provider_login_url 'google' %}">
-						<button class="form-button-two">
+						<button class="signup_form-button-two">
 							CONTINUE WITH GOOGLE
 							<img src="{% static 'images/google_icon.svg' %}" />
 						</button>
 					</a>
 				</div>
-				<div class="btn-1">
+				<div class="signup_btn-1">
 					<a href="{% provider_login_url 'facebook' method='oauth2' %}">
-						<button class="form-button-two">
+						<button class="signup_form-button-two">
 							CONTINUE WITH FACEBOOK
 							<img src="{% static 'images/facebook_icon2.svg' %}" />
 						</button>
 					</a>
 				</div>
-				<div class="form-footer">
+				<div class="signup_form-footer">
 					<p>Already have an account? <a style="color: #FFCE31; font-size: 19px; line-height: 24px;" href="{% url 'accounts:login' %}">Sign-in</a></p>
 				</div>
 			</div>

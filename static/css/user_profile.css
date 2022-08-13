@@ -1,0 +1,518 @@
+.user_banner_container {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background: url("../images/user_profile_banner.png") center/cover no-repeat;
+}
+.user_banner_container h1 {
+    position: absolute;
+    width: 100%;
+    bottom: 40%;
+    font-weight: 600;
+    text-align: center;
+    font-size: 48px;
+    color: #ffffff;
+}
+.user_section_container {
+    padding-inline: 2rem;
+}
+@media all and (max-width: 768px) {
+    .user_banner_container {
+        height: 150px;
+    }
+    .user_banner_container h1 {
+        font-size: 32px;
+    }
+    .user_section_container {
+        padding-inline: 1rem;
+    }
+}
+/* TOP SECTION */
+.user_section_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+}
+.user_details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.user_img {
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #411465;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: -100px;
+}
+.user_img img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.default_user_img {
+    display: grid;
+    place-items: center;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #FECD32;
+    color: #411465;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.edit_pen {
+    position: absolute;
+    right: 1rem;
+    bottom: .5rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #411465;
+    color: #fff;
+    display: none;
+    place-items: center;
+    padding-left: .3rem;
+    font-size: 1rem;
+}
+.edit_pen input {
+    display: none;
+}
+.isEditting .edit_pen {
+    display: grid;
+}
+.user_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: -.5rem;
+    margin-top: -40px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1B1B1B;
+}
+.user_username {
+    font-size: 14px;
+}
+.edit_user_profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    margin-top: -40px;
+}
+.edit_user_profile img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+.edit_profile {
+    border: 2px solid #FECD32;
+    border-radius: 4px;
+    padding: .3rem 1rem;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1B1B1B;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.isEditting .user_img img,
+.isEditting .default_user_img {
+    opacity: .7;
+}
+@media all and (max-width: 768px) {
+    .user_section_top {
+        padding: 1rem 0;
+    }
+    .user_details {
+        gap: .5rem;
+    }
+    .user_img {
+        width: 90px;
+        height: 90px;
+        margin-top: -50px;
+    }
+    .user_img img, .default_user_img {
+        width: 82px;
+        height: 82px;
+    }
+    .default_user_img {
+        font-size: 1.5rem;
+    }
+    .edit_pen {
+        right: .5rem;
+        bottom: .25rem;
+        padding-left: .2rem;
+        font-size: .8rem;
+    }
+    .user_info {
+        margin-top: -10px;
+        font-size: 14px;
+    }
+    .user_username {
+        font-size: 12px;
+    }
+    .edit_user_profile {
+        margin-top: -10px;
+        gap: .3rem;
+    }
+    .edit_user_profile img {
+        width: 20px;
+        height: 20px;
+    }
+    .edit_profile {
+        font-size: 12px;
+        padding-inline: .5rem;
+    }
+}
+/* MIDDLE SECTION */
+.user_section_middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+.user_list_text {
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+    color: #000;
+}
+.user_favicons_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 2rem;
+}
+.user_favicon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: #fff;
+    padding: 1.5rem;
+    border: 1px solid #BA68C8;
+    box-shadow: 0px 4px 16px #BA68C8;
+    border-radius: 10px;
+}
+.user_favicon_img {
+    width: 120px;
+    height: 120px;
+    padding: 1rem;
+    background: linear-gradient(146.16deg, #FFFFFF -7.93%, rgba(255, 255, 255, 0) 120.02%);
+    border: 1px solid #FFE798;
+    box-shadow: inset 0px 8px 28px rgba(252, 255, 181, 0.5), inset 0px 8px 24px rgba(227, 212, 129, 0.5);
+    border-radius: 5px;
+}
+.user_favicon_img img {
+    width: 100%;
+    height: 100%;
+}
+.user_favicon_info {
+    flex: 1;
+}
+.user_favicon_info h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.user_btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user_btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #FFCE31;
+    color: #1B1B1B;
+    margin-top: 1rem;
+    padding: .5rem 1rem;
+    font-size: .8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    width: max-content;
+    cursor: pointer;
+}
+.user_btn_icon {
+    width: 20px;
+}
+.favicon_date {
+    font-size: .8rem;
+    font-weight: 500;
+    color: #1B1B1B;
+    align-self: flex-end;
+}
+.user_options {
+    position: absolute;
+    top: 2rem;
+    right: 2.5rem;
+    width: 20px;
+    color: #1b1b1b;
+    background-color: transparent;
+    cursor: pointer;
+}
+.user_option_list {
+    position: absolute;
+    right: 2.5rem;
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    background-color: #fff;
+    padding: .5rem 1rem;
+    border: 1px solid #1b1b1b;
+    border-radius: 4px;
+    box-shadow: 0px 4px 7px #1B1B1B;
+    transition: all .3s ease-in-out;
+}
+.user_option_item {
+    width: 100%;
+    background-color: transparent;
+    text-transform: capitalize;
+    font-size: .8rem;
+    font-weight: 300;
+    text-align: left;
+}
+.open_options {
+    visibility: visible;
+}
+@media all and (max-width: 976px) {
+    .user_section_middle {
+        padding: 1rem 0;
+    }
+    .user_favicons_list {
+        grid-template-columns: auto;
+        gap: 1rem;
+    }
+}
+@media all and (max-width: 570px) {
+    .user_list_text {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .user_favicon {
+        gap: .8rem;
+        padding: 1rem;
+    }
+
+    .user_favicon_img {
+        width: 80px;
+        height: 80px;
+        padding: .5rem;
+    }
+
+    .user_favicon_info h2 {
+        font-size: .8rem;
+    }
+
+    .user_btns {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: .5rem;
+    }
+
+    .user_btn {
+        gap: 0.3rem;
+        margin-top: .5rem;
+        padding: .3rem .6rem;
+        font-size: .7rem;
+    }
+
+    .user_btn_icon {
+        width: 13px;
+    }
+
+    .favicon_date {
+        font-size: .6rem;
+    }
+
+    .user_options {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .user_option_list {
+        top: 2.2rem;
+        right: 1rem;
+    }
+}
+/* BOTTOM SECTION */
+.user_section_bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem;
+    border-top: 1px dashed #797878;
+}
+.user_section_bottom h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    color: #000;
+}
+.user_account_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+.user_account_info_item {
+    display: flex;
+    align-items: flex-end;
+    gap: .5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.user_account_info_item_value {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.user_action_btn {
+    width: max-content;
+    border: 2px solid #FECD32;
+    background-color: transparent;
+    border-radius: 4px;
+    padding: .3rem 2rem;
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1B1B1B;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+@media all and (max-width: 768px) {
+    .user_section_bottom {
+        padding: 1rem 0;
+    }
+    .user_section_bottom h1 {
+        align-self: center;
+        font-size: 1.7rem;
+    }
+    .user_account_info {
+        padding-left: 1rem;
+        gap: .5rem;
+    }
+    .user_account_info_item {
+        font-size: 1rem;
+    }
+    .user_account_info_item_value {
+        font-size: .9rem;
+    }
+    .user_action_btn {
+        align-self: center;
+        font-size: 12px;
+        padding-inline: .5rem;
+    }
+}
+/* EDIT DISPLAY */
+.edit_profile_display {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 2rem;
+}
+.showEditDisplay {
+    display: grid;
+}
+.edit_form h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    color: #000;
+}
+.edit_form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    background: #ffffff;
+}
+.edit_form label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    width: 100%;
+}
+.form-input {
+    background: #ffffff;
+    padding: .7rem 1.3rem;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #611E97;
+    font-size: 18px;
+}
+.form-input:focus {
+    outline: none;
+    border: 2px solid #611e97;
+}
+input[type="text"]:focus,
+input[type="email"]:focus {
+    box-shadow: 0px 8px 8px -8px rgba(1, 1, 1, 0.8);
+}
+.edit_actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+}
+.edit_btn {
+    padding: .5rem 2rem;
+}
+.edit_hero_image img {
+    width: 100%;
+    object-fit: cover;
+}
+.reset_password {
+    align-self: flex-end;
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #611e97;
+    cursor: pointer;
+}
+.reset_password:hover {
+    color: #FECD32;
+}
+@media all and (max-width: 768px) {
+    .edit_profile_display {
+        grid-template-columns: auto;
+        gap: 3rem;
+        padding: 1rem 0;
+    }
+    .edit_form h1 {
+        align-self: center;
+        font-size: 1.7rem;
+    }
+    .edit_form {
+        gap: 1rem;
+    }
+    .edit_btn {
+        padding-inline: 1.5rem;
+    }
+}
