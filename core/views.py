@@ -7,14 +7,18 @@ from django.contrib.auth.decorators import login_required
 from .engine import createFavicons
 from .models import Image, Favicon_Zip
 from accounts.models import CustomUser
+from datetime import date
 
 
+current_year = date.today().year
 def dashBoardView(request):
-    return render(request, 'core/dashboard.html')
+    context = {'current_year': current_year}
+    return render(request, 'core/dashboard.html', context)
 
 
 @login_required
 def imageUploadView(request):
+    context = {'current_year': current_year}
     images = Image.objects.filter(user_id=request.user)
     imgs = []
     for image in images:
@@ -40,9 +44,9 @@ def imageUploadView(request):
             return redirect('core:upload')
         except:
             messages.info(request, 'Image not provided')
-            return render(request, 'core/upload.html')
+            return render(request, 'core/upload.html', context)
     else:
-        return render(request, 'core/upload.html', {'images': imgs})
+        return render(request, 'core/upload.html', {'images': imgs, 'current_year':current_year})
 
 
 @login_required
@@ -78,7 +82,7 @@ def userProfileView(request):
             messages.success(request, 'Profile Updated Successfully')
             return redirect('core:profile')
     else:
-        return render(request, 'core/user_profile.html', {'images': imgs})
+        return render(request, 'core/user_profile.html', {'images': imgs, 'current_year': current_year})
 
 
 @login_required
@@ -116,11 +120,13 @@ def contactPageView(request):
 
 class AboutPageView(TemplateView):
     template_name = "core/about.html"
-
+    extra_context = {'current_year': current_year}
 
 class ContactPageView(TemplateView):
     template_name = "core/contact.html"
+    extra_context = {'current_year': current_year}
 
 
 class FAQPageView(TemplateView):
     template_name = "core/faq.html"
+    extra_context = {'current_year': current_year}
