@@ -12,19 +12,33 @@
     </div>
     <div class="contact_content">
         <div class="contact_content-left">
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'info' %}
+                        <div class="alert_message alert_danger">
+                            <strong>{{ message }}</strong>
+                        </div>
+                    {% elif message.tags == 'success' %}
+                        <div class="alert_message alert_success">
+                            <strong>{{ message }}</strong>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
             <p> Lets hear your feedbacks, suggestions or issues on your experience with Iconator. We would love to hear you out</p>
             <form action="" method="post">
+                {% csrf_token %}
                 <div class="contact_input-container">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" class="contact_input">
+                    <input type="text" name="name" id="name" class="contact_input" required>
                 </div>
                 <div class="contact_input-container">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" class="contact_input">
+                    <input type="email" name="email" id="email" class="contact_input" required>
                 </div>
                 <div class="contact_input-container">
                     <label for="message">Message</label>
-                    <textarea name="message" id="message" class="contact_textarea" cols="30" rows="10"></textarea>
+                    <textarea name="message" id="message" class="contact_textarea" cols="30" rows="10" placeholder="Add your message..." required></textarea>
                 </div>
                 <input type="submit" value="submit" class="contact_btn">
             </form>

@@ -1,6 +1,7 @@
 import secrets
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.core.mail import send_mail, BadHeaderError
 from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
 from .engine import createFavicons
@@ -85,6 +86,32 @@ def deleteImageView(request, pk):
     image = Image.objects.get(id=pk)
     image.delete()
     return redirect('core:upload')
+
+
+def contactPageView(request):
+    if request.method == 'POST':
+        list(messages.get_messages(request))
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+        if name and email and message:
+            subject = "Website Inquiry"
+            body = {
+                'name': f'Name: {name}',
+                'email': f'Email: {email}',
+                'message': f'Message: {message}'
+            }
+            message = "\n".join(body.values())
+            try:
+                send_mail(subject, message, email, [
+                          'iconatorfavicon65@gmail.com'])
+                messages.success(request, 'Message Sent')
+                return redirect('core:contact')
+            except BadHeaderError:
+                messages.info(request, 'Invalid Header Found')
+                return redirect('core:contact')
+    else:
+        return render(request, 'core/contact.html')
 
 
 class AboutPageView(TemplateView):

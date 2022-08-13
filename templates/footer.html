@@ -2,24 +2,21 @@
 <footer id="footer">
 	<section class="first-section">
 		<div class="footer_cards">
-			<h1>Product</h1>
-			<ul class="footer_card_items">
-				<li>Favicon Generator</li>
-				<li>Favicons for good web starters</li>
-				<li>HTML Code Download</li>
-				<li>Private Policy</li>
-			</ul>
+			<a href="{% url 'core:upload' %}">
+				<h1>Product</h1>
+				<ul class="footer_card_items">
+					<li>Favicon Generator</li>
+					<li>Favicons for good web starters</li>
+					<li>HTML Code Download</li>
+					<li>Private Policy</li>
+				</ul>
+			</a>
 		</div>
 		<div class="footer_cards">
 			<h1>Company</h1>
 			<ul class="footer_card_items">
-				<li>About</li>
-				<li>
-					<a
-						href="https://github.com/zuri-training/Team-65-Favicon-gen/blob/dev/documentation/Team.md"
-						>Our Team</a
-					>
-				</li>
+				<li><a href="{% url 'core:about' %}">About</a></li>
+				<li><a href="https://github.com/zuri-training/Team-65-Favicon-gen/blob/dev/documentation/Team.md">Our Team</a></li>
 				<li>Library</li>
 				<li>Private Policy</li>
 			</ul>
@@ -28,7 +25,7 @@
 			<h1>Help & Support</h1>
 			<ul class="footer_card_items">
 				<li>Iconator Community</li>
-				<li>FAQs</li>
+				<li><a href="{% url 'core:faq' %}">FAQs</a></li>
 				<li>
 					<a href="{% url 'core:contact' %}">Report Bug</a>
 				</li>
@@ -43,22 +40,10 @@
 				<li>24, Idowu Martins Street, Ikeaja Lagos</li>
 				<li>
 					<div class="footer_social_icons">
-						<img
-							src="{% static 'images/facebook_icon.svg' %}"
-							alt="facebook-icon"
-						/>
-						<img
-							src="{% static 'images/instagram_icon.svg' %}"
-							alt="instagram-icon"
-						/>
-						<img
-							src="{% static 'images/twitter_icon.svg' %}"
-							alt="twitter-icon"
-						/>
-						<img
-							src="{% static 'images/youtube_icon.svg' %}"
-							alt="youtube-icon"
-						/>
+						<img src="{% static 'images/facebook_icon.svg' %}" alt="facebook-icon" />
+						<img src="{% static 'images/instagram_icon.svg' %}" alt="instagram-icon" />
+						<img src="{% static 'images/twitter_icon.svg' %}" alt="twitter-icon" />
+						<img src="{% static 'images/youtube_icon.svg' %}" alt="youtube-icon" />
 					</div>
 				</li>
 			</ul>
