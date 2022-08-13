@@ -17,6 +17,21 @@ Users or companies can visit this platform to generate their favicons
   * CSS
   * javascript
   
+## To run the app locally on you computer, follow the following instructions:
+1. Clone the repository's main branch to your local machine
+1. Inside the folder of your local clone, open a terminal and create a virtual environment by running
+ `virtualenv .venv`
+1. Next pip install all the requirements by running
+ `pip install -r requirements.txt`
+1. Make all the server migrations by running
+ `python3 manage.py makemigrations`
+1. Migrate the changes to the database and build the database tables by running
+ `python3 manage.py migrate`
+1. Finally run the server by running 
+ `python3 manage.py runserver`
+ 
+_Any error encounted during the above process should be reported to this email: ameerogirimah@gmail.com
+  
   
 ##  How Iconator Works
 
