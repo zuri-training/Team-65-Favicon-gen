@@ -18,8 +18,8 @@ def register(request):
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
         username = request.POST['username']
-        password1 = request.POST['password1']
-        password2 = request.POST['password2']
+        password1 = request.POST['password']
+        password2 = request.POST['confirm_password']
         email = request.POST['email']
         if password1 == password2:
             if CustomUser.objects.filter(username=username).exists():

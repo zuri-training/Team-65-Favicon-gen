@@ -1,5 +1,5 @@
 .about_unique_reality {
-    background: url("../images/about_img/about_trouble.png") center/cover no-repeat;
+    background: url("/static/images/about_trouble.png") center/cover no-repeat;
     height: 310px;
     width: 100%;
     overflow: hidden;

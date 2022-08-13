@@ -10,7 +10,11 @@ body {
 }
 
 .about_unique_reality {
-    background: url("about_img/about_trouble.png") center/cover no-repeat;
+<<<<<<< HEAD
+    background: url("/static/images/about_img/about_trouble.png") center/cover no-repeat;
+=======
+    background: url("../images/about_trouble.png") center/cover no-repeat;
+>>>>>>> eed9416b1b441e5f46b1ceb83afd53f79218a3e2
     height: 310px;
     width: 100%;
     overflow: hidden;
