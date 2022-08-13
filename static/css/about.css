@@ -115,6 +115,7 @@
         flex-direction: column-reverse;
     }
 }
+
 @media screen and (max-width: 768px) {
 
     .about_heading_container {
@@ -149,98 +150,98 @@
         text-align: center;
     }
 
-                                .about_work_img {
-                                    grid-area: image;
-                                    width: 95%;
-                                }
-                
-                                .about_spirit_img {
-                                    width: 95%;
-                
-                                }
-                                }
-                
-                                @media screen and (max-width: 480px) {
-                                    .about_unique_reality {
-                                        height: auto;
-                                        margin-top: 0;
-                                        margin-bottom: 0;
-                                    }
-                
-                                    .about_unique_text {
-                                        display: block;
-                                        text-align: center;
-                                    }
-                
-                                    .about_unique_text_strong {
-                                        display: block;
-                                        text-align: center;
-                                    }
-                
-                                    .about_sec2 {
-                                        grid-template-areas:
-                                            'image'
-                                            'header'
-                                            'a'
-                                            'c'
-                                            'b'
-                                            'd';
-                                    }
-                
-                                    .about_h2_container {
-                                        grid-area: header;
-                                        margin: 0;
-                                    }
-                
-                                    .about_header1 {
-                                        font-size: 24px;
-                                        font-weight: semi-bold;
-                                    }
-                
-                                    .about_header_img {
-                                        width: 40%;
-                                    }
-                
-                                    .about_heading_container {
-                                        padding: 0;
-                                    }
-                
-                                    .about_work_img {
-                                        grid-area: image;
-                                        width: 90%;
-                                    }
-                
-                                    .about_spirit_img {
-                                        width: 90%;
-                                    }
-                
-                                    .about_sec2_cont1 {
-                                        grid-area: a;
-                                    }
-                
-                                    .about_sec2_cont2 {
-                                        grid-area: c;
-                                    }
-                
-                                    .about_sec2_cont3 {
-                                        grid-area: b;
-                                    }
-                
-                                    .about_sec2_cont4 {
-                                        grid-area: d;
-                                    }
-                
-                                    .about_sec1_group h2 {
-                                        padding: 1rem;
-                                    }
-                
-                                                                .about_sec1_text {
-                                                                    padding: 1rem;
-                                                                    line-height: 30px;
-                                                                }
-                                
-                                                                .about_sec2_text {
-                                                                    padding: 1rem;
-                                                                    line-height: 30px;
-                                                                }
-                                }
+        .about_work_img {
+            grid-area: image;
+            width: 95%;
+        }
+    
+        .about_spirit_img {
+            width: 95%;
+    
+        }
+        }
+    
+        @media screen and (max-width: 480px) {
+            .about_unique_reality {
+                height: auto;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+    
+            .about_unique_text {
+                display: block;
+                text-align: center;
+            }
+    
+            .about_unique_text_strong {
+                display: block;
+                text-align: center;
+            }
+    
+            .about_sec2 {
+                grid-template-areas:
+                    'image'
+                    'header'
+                    'a'
+                    'c'
+                    'b'
+                    'd';
+            }
+    
+            .about_h2_container {
+                grid-area: header;
+                margin: 0;
+            }
+    
+            .about_header1 {
+                font-size: 24px;
+                font-weight: semi-bold;
+            }
+    
+            .about_header_img {
+                width: 40%;
+            }
+    
+            .about_heading_container {
+                padding: 0;
+            }
+    
+            .about_work_img {
+                grid-area: image;
+                width: 90%;
+            }
+    
+            .about_spirit_img {
+                width: 90%;
+            }
+    
+            .about_sec2_cont1 {
+                grid-area: a;
+            }
+    
+            .about_sec2_cont2 {
+                grid-area: c;
+            }
+    
+            .about_sec2_cont3 {
+                grid-area: b;
+            }
+    
+            .about_sec2_cont4 {
+                grid-area: d;
+            }
+    
+            .about_sec1_group h2 {
+                padding: 1rem;
+            }
+    
+            .about_sec1_text {
+                padding: 1rem;
+                line-height: 30px;
+            }
+    
+            .about_sec2_text {
+                padding: 1rem;
+                line-height: 30px;
+            }
+        }
