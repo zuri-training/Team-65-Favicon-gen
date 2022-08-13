@@ -131,3 +131,6 @@ class ContactPageView(TemplateView):
 class FAQPageView(TemplateView):
     template_name = "core/faq.html"
     extra_context = {'current_year': current_year}
+
+def view_404(request, exception=None):
+    return redirect("dashBoardView")

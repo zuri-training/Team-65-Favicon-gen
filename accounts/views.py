@@ -86,3 +86,6 @@ def logout_user(request):
         logout(request)
         messages.success(request, 'You have been logged out Succesfully')
         return redirect('accounts:login')
+
+def view_404(request, exception=None):
+    return redirect("core:dashboard")
