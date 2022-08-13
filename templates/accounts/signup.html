@@ -33,8 +33,11 @@
 				<form class="signup_login-form" action="" method="POST">
 					{% csrf_token %}
 					<h1 class="signup_h1" >SIGN UP</h1>
-					<label for="fullname">Full name
+					<label for="fullname">Firstname
 						<input type="text" name="first_name" required="required" class="signup_form-input" />
+					</label>
+					<label for="fullname">Lastname
+						<input type="text" name="last_name" required="required" class="signup_form-input" />
 					</label>
 					<label for="username">Username
 						<input type="text" name="username" required="required" class="signup_form-input" />
@@ -43,13 +46,13 @@
 						<input type="email" name="email" required="required" class="signup_form-input" />
 					</label>
 					<label for="password">Password
-						<input class="signup_form-input" type="password" id="password1" name="password1" onkeyup="check();"
+						<input class="signup_form-input" type="password" id="password" name="password" onkeyup="check();"
 							pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 							title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
 							required />
 					</label>
 					<label for="password">Confirm Password
-						<input class="signup_form-input" type="password" id="password2" name="password2" onkeyup="check();" />
+						<input class="signup_form-input" type="password" id="confirm_password" name="confirm_password" onkeyup="check();" />
 						<span id="message"></span>
 					</label>
 					<div class="signup_message" id="message">
