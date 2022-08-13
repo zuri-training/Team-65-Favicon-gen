@@ -6,7 +6,7 @@ Platform in the sense that it can be a web application (web app) or a website.
 Users or companies can visit this platform to generate their favicons
 
 
-## Tech Stark
+## Tech Stack
 
 * [**Backend**](https://github.com/zuri-training/Team-65-Favicon-gen/blob/dev/documentation/Backend.md)
   * Django(framework)
@@ -45,7 +45,7 @@ The following is required from every user before you can access the features of 
 1.  Password
 1.  First name
 1.  Last name
-1.  Country
+
 
 Click [Signup](www.iconator.zurifordummies.com/signup) to signup on the platform and [Signin](www.iconator.zurifordummies.com/signin) to login if you already have an account
 
