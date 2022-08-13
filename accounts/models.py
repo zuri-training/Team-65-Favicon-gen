@@ -7,4 +7,4 @@ from cloudinary.models import CloudinaryField
 
 
 class CustomUser(AbstractUser):
-    profile_pic = CloudinaryField(blank=True, null=True)
+    profile_pic = CloudinaryField('image', blank=True, null=True)

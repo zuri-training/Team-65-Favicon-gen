@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load static %}
+{% block custom_style %}
+    <link rel="stylesheet" href="{% static 'css/user_profile.css' %}">
+{% endblock custom_style %}
+{% block title %}
+    ICONATOR | MY ACCOUNT
+{% endblock title %}
+{% block content %}
+    <main>
+        <div class="user_banner_container" role="banner">
+            <h1>user profile</h1>
+        </div>
+        <section class="user_section_container">
+            <section class="user_section_top">
+                <div class="user_details">
+                    {% if request.user.profile_pic %}
+                    <figure class="user_img">
+                        <img src="{{ request.user.profile_pic.url }}" alt="{{ request.user.first_name }}" />
+                        <label for="new_image" class="edit_pen"><i class="fa-solid fa-file-pen"></i><input type="file" name="new_image" id="new_image" form="edit_form"></label>
+                    </figure>
+                    {% else %}
+                    <div class="user_img">
+                        <div class="default_user_img">{{ request.user.username.0 }}</div>
+                        <label for="new_image" class="edit_pen"><i class="fa-solid fa-file-pen"></i><input type="file" name="new_image" id="new_image" form="edit_form"></label>
+                    </div>
+                    {% endif %}
+                    <div class="user_info">
+                        <p class="user_fullname">{{ request.user.first_name }} {{ request.user.last_name }}</p>
+                        <p class="user_username">@{{ request.user.username }}</p>
+                    </div>
+                </div>
+                <div class="edit_user_profile">
+                    <img src="{% static 'images/edit_profile_icon.svg' %}" alt="edit icon">
+                    <span class="edit_profile">edit profile</span>
+                </div>
+            </section>
+            <section class="user_section_middle">
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.tags == 'info' %}
+                            <div class="alert_message alert_danger">
+                                <strong>{{ message }}</strong>
+                            </div>
+                        {% elif message.tags == 'success' %}
+                            <div class="alert_message alert_success">
+                                <strong>{{ message }}</strong>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                <h1 class="user_list_text">my history</h1>
+                <div class="user_favicons_list">
+                    {% for image in images %}
+                    <article class="user_favicon">
+                        <figure class="user_favicon_img">
+                            <img src="{{ image.image.image_url }}" alt="{{ image.image.image_name }}" />
+                        </figure>
+                        <div class="user_favicon_info">
+                            <h2>{{ image.image.image_name }}</h2>
+                            <div class="user_btns">
+                                <button class="user_btn">Copy HTML code <img class="user_btn_icon" src="{% static 'images/edit_icon.svg' %}" alt="download icon"></button>
+                                <span class="favicon_date" data-date='{{ image.image.image_upload_date }}'></span>
+                            </div>
+                        </div>
+                        <button class="user_options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        <div class="user_option_list">
+                            <button class="user_option_item"><a href="{{ image.favicon.favicon_zip_url }}" download>download</a></button>
+                            <button class="user_option_item"><a href="{% url 'core:delete-favicon' image.image.pk %}">delete</a></button>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+            <section class="user_section_bottom">
+                <h1>account info</h1>
+                <div class="user_account_info">
+                    <div class="user_account_info_item">
+                        <p>First Name : <span class="user_account_info_item_value">{{ request.user.first_name }}</span></p>
+                    </div>
+                    <div class="user_account_info_item">
+                        <p>Last Name : <span class="user_account_info_item_value">{{ request.user.last_name }}</span></p>
+                    </div>
+                    <div class="user_account_info_item">
+                        <p>username : <span class="user_account_info_item_value">{{ request.user.username }}</span></p>
+                    </div>
+                    <div class="user_account_info_item">
+                        <p>Email : <span class="user_account_info_item_value">{{ request.user.email }}</span></p>
+                    </div>
+                </div>
+                <button class="user_action_btn"><a href="{% url 'accounts:logout' %}">logout</a></button>
+            </section>
+            <section class="edit_profile_display">
+                <form action="" method="post" id="edit_form" class="edit_form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h1>edit details</h1>
+                    <label>First Name<input type="text" name="first_name" value="{{ request.user.first_name }}" class="form-input" /></label>
+                    <label>Last Name<input type="text" name="last_name" value="{{ request.user.last_name }}" class="form-input" /></label>
+                    <label>Username<input type="text" name="username" value="{{ request.user.username }}" class="form-input" /></label>
+                    <label>Enter Email Address<input type="email" name="email" value="{{ request.user.email }}" class="form-input" /></label>
+                    <div class="edit_actions">
+                        <button class="user_action_btn edit_btn" type="submit">Edit</button>
+                        <p class="reset_password"><a>Reset password</a></p>
+                    </div>
+                </form>
+                <figure class="edit_hero_image"><img src="{% static 'images/edit_page_hero_img.png' %}" alt="hero image"></figure>
+            </section>
+        </section>
+    </main>
+{% endblock %}
+{% block custom_js %}
+    <script src="{% static 'js/profile.js' %}"></script>
+{% endblock custom_js %}
