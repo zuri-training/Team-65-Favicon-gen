@@ -270,16 +270,17 @@
     z-index: 100;
 }
 .close_sidebar {
+    justify-self: end;
+    display: grid;
+    place-items: center;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     border: 2px solid #FECD32;
-    padding: .3rem;
     background-color: transparent;
     color: #FECD32;
     margin-bottom: 3rem;
     margin-right: .5rem;
-    justify-self: end;
 }
 .header_sidebar_nav {
     align-self: start;

@@ -5,43 +5,22 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
 }
 body {
-    line-height: 1;
-}
-blockquote,
-q {
-    quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: "";
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
+    font-family: 'Manrope', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #fff;
+    color: #1B1B1B;
+    font-size: 16px;
+    line-height: 1.5;
 }
 a {
     text-decoration: none;
     color: inherit;
+}
+@media all and (max-width: 768px) {
+    body {
+        overflow-x: clip;
+    }
 }

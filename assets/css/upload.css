@@ -1,29 +1,33 @@
 /*============================================
 CUSTOM STYLES
 ============================================*/
-body {
-    font-family: 'Manrope', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    background: #fff;
-    overflow-x: hidden;
-}
 .section_center {
     width: 100%;
-    padding-inline: 80px;
-    padding-block: 41px;
+    padding: 2rem 4rem;
+}
+.section_center:first-of-type {
+    padding-top: 4rem;
 }
 .btn_gold {
     background: #FFCE31;
     color: #1B1B1B;
     margin-top: 1rem;
-    padding: 10px 50px;
+    padding: .5rem 2rem;
     border-radius: 5px;
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: capitalize;
     width: max-content;
     cursor: pointer;
+}
+@media all and (max-width: 768px) {
+    .section_center {
+        padding: 2rem 1rem;
+    }
+    .btn_gold {
+        font-size: 1rem;
+        padding: .5rem 1.2rem;
+    }
 }
 /*============================================
 UPLOAD SECTION
@@ -36,7 +40,7 @@ UPLOAD SECTION
 }
 .upload_form h1 {
     color: #fff;
-    font-size: 40px;
+    font-size: 3rem;
     font-weight: 600;
     margin-bottom: 1rem;
 }
@@ -84,14 +88,33 @@ UPLOAD SECTION
     text-align: center;
     margin-top: 1rem;
 }
+@media all and (max-width: 768px) {
+    .upload_form {
+        padding-inline: 1rem;
+    }
+    .upload_form h1 {
+        font-size: 1.5rem;
+    }
+    .upload_label {
+        height: 200px;
+    }
+    .preview_img {
+        width: 50px;
+        height: 50px;
+    }
+    .info {
+        font-size: .8rem;
+    }
+}
 /*============================================
 FAVICONS SECTION
 ============================================*/
 .list_text {
     font-weight: 600;
-    font-size: 40px;
+    font-size: 3rem;
     text-transform: capitalize;
     margin-bottom: 1rem;
+    color: #000;
 }
 .favicons_list {
     display: flex;
@@ -146,6 +169,36 @@ FAVICONS SECTION
     justify-content: end;
     padding-inline-end: 10%;
 }
+@media all and (max-width: 768px) {
+    .list_text {
+        font-size: 1.5rem;
+    }
+    .favicons_list {
+        gap: 1.5rem;
+    }
+    .favicon {
+        padding: .8rem;
+        gap: 1rem;
+    }
+    .favicon_img {
+        width: 80px;
+        height: 80px;
+    }
+    .favicon_info h2 {
+        font-size: .8rem;
+    }
+    .btns a {
+        gap: .2rem;
+        font-size: .7rem;
+    }
+    .btns img {
+        width: .7rem;
+        height: .7rem;
+    }
+    .style_icon img {
+        width: 70px;
+    }
+}
 /*============================================
 INSTRUCTIONS SECTION
 ============================================*/
@@ -158,7 +211,7 @@ INSTRUCTIONS SECTION
     font-weight: 500;
 }
 .favicon_instructions h2 {
-    font-size: 40px;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 3rem;
 }
@@ -173,4 +226,21 @@ INSTRUCTIONS SECTION
     border-radius: 20px;
     color: #000;
     font-size: 20px;
+}
+@media all and (max-width:768px) {
+    .favicon_instructions {
+        padding-inline: 1rem;
+        font-size: 1rem;
+    }
+    .favicon_instructions h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .favicon_instructions ul {
+        padding: .5rem;
+    }
+    .html_code {
+        padding: .7rem;
+        font-size: .8rem;
+    }
 }
