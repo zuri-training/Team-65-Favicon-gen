@@ -37,9 +37,9 @@
     <button class="close_sidebar"><i class="fa-solid fa-xmark"></i></button>
     <nav class="header_sidebar_nav">
         {% if request.path == '/' %}
-            <p class="active"><a href="{% url 'core:dashboard' %}">Dashboard</a></p>
+            <p class="active"><a href="{% url 'core:dashboard' %}">Home</a></p>
         {% else %}
-            <p><a href="{% url 'core:dashboard' %}">Dashboard</a></p>
+            <p><a href="{% url 'core:dashboard' %}">Home</a></p>
         {% endif %}
         {% if 'my-favicons' in request.path %}
             <p class="active"><a href="{% url 'core:upload' %}">Favicon</a></p>

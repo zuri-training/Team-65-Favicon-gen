@@ -93,6 +93,7 @@ def deleteImageView(request, pk):
 
 
 def contactPageView(request):
+    context = {'current_year': current_year}
     if request.method == 'POST':
         list(messages.get_messages(request))
         name = request.POST['name']
@@ -115,7 +116,7 @@ def contactPageView(request):
                 messages.info(request, 'Invalid Header Found')
                 return redirect('core:contact')
     else:
-        return render(request, 'core/contact.html')
+        return render(request, 'core/contact.html', context)
 
 
 class AboutPageView(TemplateView):
@@ -130,3 +131,6 @@ class ContactPageView(TemplateView):
 class FAQPageView(TemplateView):
     template_name = "core/faq.html"
     extra_context = {'current_year': current_year}
+
+def view_404(request, exception=None):
+    return redirect("dashBoardView")
