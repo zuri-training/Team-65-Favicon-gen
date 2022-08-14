@@ -11,6 +11,8 @@ from datetime import date
 
 
 current_year = date.today().year
+
+
 def dashBoardView(request):
     context = {'current_year': current_year}
     return render(request, 'core/dashboard.html', context)
@@ -46,7 +48,7 @@ def imageUploadView(request):
             messages.info(request, 'Image not provided')
             return render(request, 'core/upload.html', context)
     else:
-        return render(request, 'core/upload.html', {'images': imgs, 'current_year':current_year})
+        return render(request, 'core/upload.html', {'images': imgs, 'current_year': current_year})
 
 
 @login_required
@@ -107,7 +109,7 @@ def contactPageView(request):
             }
             message = "\n".join(body.values())
             try:
-                send_mail(subject, message, email, [
+                send_mail(subject, message, 'iconatorfavicon65@gmail.com', [
                           'iconatorfavicon65@gmail.com'])
                 messages.success(request, 'Message Sent')
                 return redirect('core:contact')
@@ -121,6 +123,7 @@ def contactPageView(request):
 class AboutPageView(TemplateView):
     template_name = "core/about.html"
     extra_context = {'current_year': current_year}
+
 
 class ContactPageView(TemplateView):
     template_name = "core/contact.html"

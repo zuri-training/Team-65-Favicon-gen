@@ -113,7 +113,7 @@
 }
 @media all and (max-width: 976px) {
     #header {
-        padding-inline: 1rem;
+        padding-inline: 5rem;
     }
     .header_nav,
     .header_user_details,
@@ -122,6 +122,11 @@
     }
     .header_hamburger {
         display: unset;
+    }
+}
+@media all and (max-width: 550px) {
+    #header {
+        padding-inline: 1rem;
     }
 }
 /* styling the footer */
