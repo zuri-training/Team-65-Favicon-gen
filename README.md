@@ -18,8 +18,9 @@ Users or companies can visit this platform to generate their favicons
   * javascript
   
 ## To run the app locally on you computer, follow the following instructions:
-1. Clone the repository's main branch to your local machine
-1. Inside the folder of your local clone, open a terminal and create a virtual environment by running
+1. Using Postrges, create a database with the Username, Database name, Password and Port included in the .env file
+2. Clone the repository's main branch to your local machine
+3. Inside the folder of your local clone, open a terminal and create a virtual environment by running
  `virtualenv .venv`
 1. Next pip install all the requirements by running
  `pip install -r requirements.txt`
@@ -48,6 +49,8 @@ The following is required from every user before you can access the features of 
 
 
 Click [Signup](www.iconator.zurifordummies.com/signup) to signup on the platform and [Signin](www.iconator.zurifordummies.com/signin) to login if you already have an account
+
+The complete documentation of the project can be found at [in google doc](https://docs.google.com/document/d/1wZWKZjfOFX8Cf89RNFg4mYW9l3s2EkKoCXjec7odq3Y/edit?usp=sharing)
 
 ## Repository Tree Structure
 
