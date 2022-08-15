@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-7m$*urtv0faxe2q9via-x79_i+9zt!eg!)v_a#3_zs*l^pic@)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'iconator.pythonanywhere.com']
 
 
 # Application definition
@@ -230,12 +230,12 @@ SOCIALACCOUNT_LOGIN_ON_GET = True
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = str(os.getenv('SENDGRID_API_KEY'))
-DEFAULT_FROM_EMAIL = 'iconatorfavicon65@gmail.com'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'apikey'
+# EMAIL_HOST_PASSWORD = str(os.getenv('SENDGRID_API_KEY'))
+# DEFAULT_FROM_EMAIL = 'iconatorfavicon65@gmail.com'

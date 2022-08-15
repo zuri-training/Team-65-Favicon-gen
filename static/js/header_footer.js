@@ -16,6 +16,7 @@ closeSidebar.addEventListener('click', () => {
     setTimeout(() => document.body.classList.remove('body_modal'), 500);
 });
 footerYear.innerText = new Date().getFullYear();
+
 // DROP DOWN MENU FOR FAVICON AND HELP & SUPPORT
 faviconDrop.addEventListener('click', () => {
     const nav_bottom = faviconDrop.getBoundingClientRect().bottom;
