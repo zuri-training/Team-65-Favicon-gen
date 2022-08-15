@@ -170,6 +170,7 @@ cloudinary.config(
     cloud_name=str(os.getenv('CLOUD_NAME')),
     api_key=str(os.getenv('CLOUD_KEY')),
     api_secret=str(os.getenv('CLOUD_SECRET')),
+    api_proxy='http://proxy.server:3128',
     secure=True
 )
 
@@ -239,3 +240,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = str(os.getenv('SENDGRID_API_KEY'))
 DEFAULT_FROM_EMAIL = 'iconatorfavicon65@gmail.com'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
