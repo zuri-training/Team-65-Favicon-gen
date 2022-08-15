@@ -237,5 +237,5 @@ EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD='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'  #str(os.getenv('SENDGRID_API_KEY'))
+EMAIL_HOST_PASSWORD= str(os.getenv('SENDGRID_API_KEY'))
 DEFAULT_FROM_EMAIL = 'iconatorfavicon65@gmail.com'
