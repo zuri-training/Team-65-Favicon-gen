@@ -300,6 +300,7 @@
     height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    gap: 3rem;
     align-items: center;
     justify-content: center;
     background: #611E97;
@@ -320,7 +321,6 @@
     border: 2px solid #FECD32;
     background-color: transparent;
     color: #FECD32;
-    margin-bottom: 3rem;
     margin-right: .5rem;
 }
 .header_sidebar_nav {
