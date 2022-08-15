@@ -6,6 +6,9 @@
     border: 0;
     box-sizing: border-box;
 }
+::-webkit-scrollbar {
+    display: none;
+}
 body {
     font-family: 'Manrope', sans-serif;
     width: 100%;

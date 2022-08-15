@@ -100,7 +100,7 @@
                     <label>Enter Email Address<input type="email" name="email" value="{{ request.user.email }}" class="form-input" /></label>
                     <div class="edit_actions">
                         <button class="user_action_btn edit_btn" type="submit">Edit</button>
-                        <p class="reset_password"><a>Reset password</a></p>
+                        <p class="reset_password"><a href="{% url 'accounts:reset_password' %}">Reset password</a></p>
                     </div>
                 </form>
                 <figure class="edit_hero_image"><img src="{% static 'images/edit_page_hero_img.png' %}" alt="hero image"></figure>

@@ -3,15 +3,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model, authenticate, login, logout
 from django.contrib import messages
 from .models import CustomUser
-from datetime import date
-from core.engine import createFavicons
+from django.contrib.auth.views import PasswordResetView
 
-CustomUser.UserModel = get_user_model()
-
-current_year = date.today().year
 
 def register(request):
-    context = {'current_year': current_year}
     if request.user.is_authenticated:
         messages.info(
             request, "You are already Logged In! Log out to create a new account.")
@@ -27,10 +22,10 @@ def register(request):
         if password1 == password2:
             if CustomUser.objects.filter(username=username).exists():
                 messages.info(request, 'Username Taken')
-                return render(request, 'accounts/signup.html', context)
+                return render(request, 'accounts/signup.html')
             elif CustomUser.objects.filter(email=email).exists():
                 messages.info(request, 'Email address already exists')
-                return render(request, 'accounts/signup.html', context)
+                return render(request, 'accounts/signup.html')
             else:
                 user = CustomUser.objects.create_user(
                     username=username, password=password1, first_name=first_name,
@@ -46,16 +41,13 @@ def register(request):
                 return redirect('core:dashboard')
         else:
             messages.info(request, 'Passwords don\'t match')
-            return render(request, 'accounts/signup.html', context)
+            return render(request, 'accounts/signup.html')
     else:
-        return render(request, 'accounts/signup.html', context)
+        return render(request, 'accounts/signup.html')
 
 
 def login_user(request):
-    context = {'current_year': current_year}
     if request.user.is_authenticated:
-        # messages.info(
-        #     request, "You are already Logged In! Log out to create a new account.")
         return redirect('core:dashboard')
     if request.method == 'POST':
         list(messages.get_messages(request))
@@ -76,7 +68,7 @@ def login_user(request):
             messages.info(request, 'Wrong Username or Password, try again')
             return redirect('accounts:login')
     else:
-        return render(request, 'accounts/login.html', context)
+        return render(request, 'accounts/login.html')
 
 
 def logout_user(request):
@@ -86,6 +78,7 @@ def logout_user(request):
         logout(request)
         messages.success(request, 'You have been logged out Succesfully')
         return redirect('accounts:login')
+
 
 def view_404(request, exception=None):
     return redirect("core:dashboard")

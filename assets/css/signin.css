@@ -131,6 +131,7 @@
   }
   .imgdiv {
     grid-row: 1;
+    padding-inline: 3rem;
   }
   .signin_sbt1, .signin_details {
     text-align: center;
