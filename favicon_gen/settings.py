@@ -180,10 +180,10 @@ SOCIALACCOUNT_PROVIDERS = {
         "APP": {
             "client_id":
             # os.getenv('GOOGlE_CLIENT_ID'),
-            "970366465519-22lhlm60p0h6r5e0i2au0fd6fg8v8m94.apps.googleusercontent.com",
+            "473132298384-oueg6muv6kph20usfk873i2jr09j53u6.apps.googleusercontent.com",
             "secret":
             # os.getenv('GOOGLE_SECRET'),
-            "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",
+            "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",
         },
 
         'SCOPE': [
@@ -216,10 +216,10 @@ SOCIALACCOUNT_PROVIDERS = {
         'VERSION': 'v13.0',
         'APP': {
             # os.getenv("APP_ID"),
-            'client_id': '469777697958206',
+            'client_id': '416193227160075',
             'secret':
             # os.getenv("APP_SECRET"),
-            '6876c4ddc18bbb47f69e9eff48c9ee52',
+            '07c8db8dfc7b4a514d1ff1472abaa97c',
             'key': '',
         },
     },
@@ -237,5 +237,5 @@ EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = str(os.getenv('SENDGRID_API_KEY'))
+EMAIL_HOST_PASSWORD='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'  #str(os.getenv('SENDGRID_API_KEY'))
 DEFAULT_FROM_EMAIL = 'iconatorfavicon65@gmail.com'
