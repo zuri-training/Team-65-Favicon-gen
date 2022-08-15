@@ -78,10 +78,22 @@ UPLOAD SECTION
     object-fit: cover;
 }
 .isUploading {
+    position: relative;
+    top: .5rem;
+    display: none;
     color: rgb(194, 194, 194);
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 300;
+    animation: 1s linear uploading infinite;
+}
+@keyframes uploading {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 .info {
     display: block;

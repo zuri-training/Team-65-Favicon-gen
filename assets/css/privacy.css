@@ -1,0 +1,52 @@
+.privacy_container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background: url("../images/privacy_policy_banner.png") center/cover no-repeat;
+}
+.privacy_container h3 {
+    position: absolute;
+    width: 100%;
+    bottom: 15%;
+    font-weight: 600;
+    text-align: center;
+    font-size: 48px;
+    color: #ffffff;
+}
+.privacy_list {
+    display: grid;
+    gap: 2rem;
+    padding: 3rem 6rem;
+}
+.privacy_item {
+    display: grid;
+    gap: 1rem;
+}
+.privacy_item_heading {
+    list-style-position: inside;
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+}
+.privacy_item_desc {
+    font-size: 20px;
+    font-weight: 400;
+    color: #1b1b1b;
+}
+@media (max-width: 768px) {
+    .privacy_container {
+        height: 200px;
+    }
+    .privacy_container h3 {
+        font-size: 32px;
+    }
+    .privacy_list {
+        padding: 2rem 1rem;
+    }
+    .privacy_item_heading {
+        font-size: 1.3rem;
+    }
+    .privacy_item_desc {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block custom_style %}
+    <link rel="stylesheet" href="{% static 'css/privacy.css' %}">
+{% endblock custom_style %}
+{% block title %}
+    ICONATOR | PRIVACY POLICY
+{% endblock title %}
+{% block content %}
+    <section class="privacy_container">
+        <h3>Privacy Policy</h3>
+    </section>
+    <ul class="privacy_list">
+        <div class="privacy_item">
+            <li class="privacy_item_heading">Overview</li>
+            <p class="privacy_item_desc">Iconator operates as a favicon geneartor service. this page is aimed at informing websites visitors regarding our
+            policies with the collection, use and disclosure of personal information if anyone decides to use our services. if you
+            chose to use our services, then you agree to the terms and collection and use of information in relation with this
+            policy.</p>
+            <p class="privacy_item_desc">The personal statement that we collect is used for providing and improving the services. We will not use or share your
+            information with anyone except as described in this Privacy Policy.</p>
+        </div>
+        <div class="privacy_item">
+            <li class="privacy_item_heading">Cookies</li>
+            <p class="privacy_item_desc">Cookies are files with a small amount of data that is commonly used by an anonymous unique identifier. These are sent to
+            your browser from the website that you visit and are stored on your computer's hard drive.</p>
+            <p class="privacy_item_desc">Our website uses these "cookies" to collect information and to improve our service. You have the option to either accept
+            or refuse these cookies, and know when a cookie is being sent to your computer. If you choose to refuse our cookies,you
+            may not be able to use some parts of our service.</p>
+        </div>
+        <div class="privacy_item">
+            <li class="privacy_item_heading">Information Collection and Use</li>
+            <p class="privacy_item_desc">For better experience while using our service, we may require you to provide us with certain personally identifiable information, including but not limited to your name, email address and phone number. The information we collect will be used to contact or identify you.</p>
+        </div>
+        <div class="privacy_item">
+            <li class="privacy_item_heading">Log Data</li>
+            <p class="privacy_item_desc">We want to inform you that whenever you visit our service, we collect information that your browser sends to us, that is
+            called Log Data. This Log Data may include information such as your computer's Internet protocol ("IP") address, browser
+            version, pages of our service that you visit, the date and time of your visit and other statistics.</p>
+        </div>
+    </ul>
+{% endblock content %}

@@ -124,3 +124,11 @@ class ContactPageView(TemplateView):
 
 class FAQPageView(TemplateView):
     template_name = "core/faq.html"
+
+
+class HowItWorksPageView(TemplateView):
+    template_name = "core/how_it_works.html"
+
+
+class PrivacyPolicyPageView(TemplateView):
+    template_name = "core/privacy_policy.html"

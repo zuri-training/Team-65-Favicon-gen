@@ -1,0 +1,89 @@
+.hiw_section {
+    display: grid;
+    gap: 1.5rem;
+    padding: 2.5rem 4rem;
+}
+.hiw_heading {
+    font-weight: 700;
+    font-size: 48px;
+    color: #1B1B1B;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+.hiw_article {
+    display: grid;
+    gap: 1.8rem;
+}
+.hiw_article_header {
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    background: #310F4C;
+    padding: .7rem 2rem;
+    width: max-content;
+}
+.hiw_article_text, .hiw_article_list li {
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+}
+.hiw_article_image {
+    display: grid;
+    place-items: center;
+    margin-bottom: 2rem;
+}
+.hiw_article_image img {
+    width: 60%;
+}
+.hiw_tutorial {
+    text-align: center;
+}
+.hiw_article_steps {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.hiw_article_step_text {
+    color: #000;
+    font-size: 22px;
+    font-weight: 500;
+}
+.hiw_article_list {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+@media all and (max-width: 768px) {
+    .hiw_section {
+        padding: 2rem 1rem;
+        gap: 1rem;
+    }
+    .hiw_heading {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+    .hiw_article {
+        gap: .8rem;
+    }
+    .hiw_article_header {
+        font-size: 1.1rem;
+        padding-inline: 1rem;
+    }
+    .hiw_article_text, .hiw_article_list li {
+        font-size: .8rem;
+    }
+    .hiw_article_image {
+        margin-bottom: 1rem;
+    }
+    .hiw_article_image img {
+        width: 100%;
+    }
+    .hiw_article_steps {
+        gap: 1rem;
+    }
+    .hiw_article_step_text {
+        font-size: 1rem;
+    }
+}

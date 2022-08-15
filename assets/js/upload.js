@@ -3,9 +3,12 @@ const uploadInput = document.querySelector('#imageForm');
 const previewBox = document.querySelector('.preview_img');
 const copyText = document.querySelector('#copy_text');
 const copyBtn = document.querySelector('#copy_btn');
-const isUploadingText = document.querySelector('.isUploading');
+const isUploadingShow = document.querySelector('.isUploading');
 
 // DRAG AND DROP FUNCTIONALITY
+function isUploading() {
+    isUploadingShow.style.display = 'block';
+}
 function previewFile(file) {
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -30,7 +33,7 @@ function uploadFile(file) {
     xhr.open('POST', '/my-favicons/');
     xhr.setRequestHeader('X-CSRFToken', token);
     xhr.send(formData);
-    isUploadingText.innerHTML = 'Uploading...';
+    isUploading();
 }
 function highlightZone(e) {
     e.preventDefault();
