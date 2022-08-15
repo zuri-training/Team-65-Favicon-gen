@@ -129,6 +129,9 @@
     #header {
         padding-inline: 5rem;
     }
+    #icon {
+        width: 70%;
+    }
     .header_nav,
     .header_user_details,
     .header_auth_btns {
