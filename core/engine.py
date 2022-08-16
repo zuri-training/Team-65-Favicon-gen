@@ -1,5 +1,3 @@
-import cloudinary.api
-import cloudinary.uploader
 import cloudinary
 from PIL import Image
 import os
@@ -20,6 +18,8 @@ cloudinary.config(
     secure=True
 )
 
+import cloudinary.uploader
+import cloudinary.api
 
 def createFavicons(img, imgid, zipid):
     # create temporary storage
