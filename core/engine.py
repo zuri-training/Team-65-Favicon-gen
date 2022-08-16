@@ -17,6 +17,7 @@ cloudinary.config(
     cloud_name=str(os.getenv('CLOUD_NAME')),
     api_key=str(os.getenv('CLOUD_KEY')),
     api_secret=str(os.getenv('CLOUD_SECRET')),
+    api_proxy='http://x.x.x.x:8080/',
     secure=True
 )
 
