@@ -12,9 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-import cloudinary.api
-import cloudinary.uploader
 import cloudinary
+import cloudinary_storage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +27,7 @@ SECRET_KEY = 'django-insecure-7m$*urtv0faxe2q9via-x79_i+9zt!eg!)v_a#3_zs*l^pic@)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'iconator.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'iconator.pythonanywhere.com', 'www.iconator.pythonanywhere.com ']
 
 
 # Application definition
@@ -44,6 +43,7 @@ INSTALLED_APPS = [
 
     'accounts',
     'core',
+    'cloudinary_storage',
     'cloudinary',
 
     # AllAuth
@@ -95,14 +95,25 @@ WSGI_APPLICATION = 'favicon_gen.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': str(os.getenv('DB_NAME')),
+#         'USER': str(os.getenv('DB_USER')),
+#         'PASSWORD': str(os.getenv('DB_PASSWORD')),
+#         'HOST': str(os.getenv('DB_HOST')),
+#         'PORT': 5432,
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': str(os.getenv('DB_NAME')),
-        'USER': str(os.getenv('DB_USER')),
-        'PASSWORD': str(os.getenv('DB_PASSWORD')),
-        'HOST': str(os.getenv('DB_HOST')),
-        'PORT': 5432,
+        'ENGINE'  : 'django.db.backends.mysql',
+        'NAME'    : 'iconator$favicon',
+        'USER'    : 'iconator',
+        'PASSWORD': 'database',
+        'HOST'    : 'iconator.mysql.pythonanywhere-services.com',
+        'PORT'    : '3306',
     }
 }
 
@@ -166,12 +177,35 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# MEDIA_URL = '/media/'
+
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 cloudinary.config(
     cloud_name=str(os.getenv('CLOUD_NAME')),
     api_key=str(os.getenv('CLOUD_KEY')),
     api_secret=str(os.getenv('CLOUD_SECRET')),
-    secure=True
+    api_proxy='http://proxy.server:3128',
+    # secure=True
 )
+
+import cloudinary.uploader
+import cloudinary.api
+# CLOUDINARY = {
+#       'cloud_name': 'db1nlq5lv',
+#       'api_key': '811464421754933',
+#       'api_secret': '7INdbrOuNgoajjMyYCyxBcjKQK4',
+#       'api_proxy': 'http://proxy.server:8080'
+# }
+
+# CLOUDINARY = {
+#       'cloud_name': 'maxiron2',
+#       'api_key': '537434449237162',
+#       'api_secret': '40rqE8BTGb2sNss7wkzaUesP2F0',
+#       'api_proxy': 'http://proxy.server:3128'
+# }
+
 
 LOGIN_URL = 'accounts:login'
 

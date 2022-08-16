@@ -1,5 +1,3 @@
-import cloudinary.api
-import cloudinary.uploader
 import cloudinary
 from PIL import Image
 import os
@@ -12,13 +10,16 @@ from pathlib import Path
 root = Path(__file__).resolve().parent.parent
 dotenv.read_dotenv(root / '.env')
 
-# setting cloudinary configuration globally
 cloudinary.config(
-    cloud_name=str(os.getenv('CLOUD_NAME')),
-    api_key=str(os.getenv('CLOUD_KEY')),
-    api_secret=str(os.getenv('CLOUD_SECRET')),
-    secure=True
-)
+     cloud_name=str(os.getenv('CLOUD_NAME')),
+     api_key=str(os.getenv('CLOUD_KEY')),
+     api_secret=str(os.getenv('CLOUD_SECRET')),
+     api_proxy='http://proxy.server:3128',
+     secure=True
+ )
+import cloudinary.uploader
+import cloudinary.api
+
 
 
 def createFavicons(img, imgid, zipid):
@@ -26,6 +27,7 @@ def createFavicons(img, imgid, zipid):
     image_path = root/'tempstorage'
     if os.path.exists(image_path):
         shutil.rmtree(image_path)
+    #os.mkdir(os.path.join(root, 'tempstorage' ))
     os.mkdir(image_path)
     # loop through sizes, convert image into different sizes and formats, save converted files to tempstorage
     sizes = [(16, 16), (32, 32), (180, 180), (192, 192), (512, 512)]
