@@ -271,4 +271,4 @@ EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 DEFAULT_FROM_EMAIL = 'iconatorfavicon65@gmail.com'
-DEFAULT_DOMAIN = 'localhost:8000'
+DEFAULT_DOMAIN = 'iconator.pythonanywhere.com'
