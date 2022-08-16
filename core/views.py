@@ -97,11 +97,10 @@ def contactPageView(request):
         if name and email and message:
             subject = "Website Inquiry"
             body = {
-                'name': f'Name: {name}',
-                'email': f'Email: {email}',
-                'message': f'Message: {message}'
+                'Name': f"Hi, I'm {name} and my email is {email}",
+                'Message': f'{message}'
             }
-            message = "\n".join(body.values())
+            message = "\n\n".join(body.values())
             try:
                 send_mail(subject, message, 'iconatorfavicon65@gmail.com', [
                           'iconatorfavicon65@gmail.com'])

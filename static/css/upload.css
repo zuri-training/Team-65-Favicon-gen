@@ -70,7 +70,9 @@ UPLOAD SECTION
     margin-top: 1rem;
     width: 70px;
     height: 70px;
-    background: white;
+    background: transparent;
+    border: 1px dashed rgb(194, 194, 194);
+    border-radius: 5px;
 }
 .preview_img img {
     width: 100%;

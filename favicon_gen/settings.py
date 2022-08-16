@@ -10,11 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-from pathlib import Path
-import os
 import cloudinary.api
 import cloudinary.uploader
+from pathlib import Path
+import os
 import cloudinary
+import cloudinary_storage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,12 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-7m$*urtv0faxe2q9via-x79_i+9zt!eg!)v_a#3_zs*l^pic@)'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'iconator.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'iconator.pythonanywhere.com',
+                 'www.iconator.pythonanywhere.com ']
 
 
 # Application definition
@@ -44,6 +46,7 @@ INSTALLED_APPS = [
 
     'accounts',
     'core',
+    'cloudinary_storage',
     'cloudinary',
 
     # AllAuth
@@ -106,6 +109,17 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'iconator$favicon',
+#         'USER': 'iconator',
+#         'PASSWORD': 'database',
+#         'HOST': 'iconator.mysql.pythonanywhere-services.com',
+#         'PORT': '3306',
+#     }
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -166,13 +180,33 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# MEDIA_URL = '/media/'
+
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 cloudinary.config(
     cloud_name=str(os.getenv('CLOUD_NAME')),
     api_key=str(os.getenv('CLOUD_KEY')),
     api_secret=str(os.getenv('CLOUD_SECRET')),
     api_proxy='http://proxy.server:3128',
-    secure=True
+    # secure=True
 )
+
+# CLOUDINARY = {
+#       'cloud_name': 'db1nlq5lv',
+#       'api_key': '811464421754933',
+#       'api_secret': '7INdbrOuNgoajjMyYCyxBcjKQK4',
+#       'api_proxy': 'http://proxy.server:8080'
+# }
+
+# CLOUDINARY = {
+#       'cloud_name': 'maxiron2',
+#       'api_key': '537434449237162',
+#       'api_secret': '40rqE8BTGb2sNss7wkzaUesP2F0',
+#       'api_proxy': 'http://proxy.server:3128'
+# }
+
 
 LOGIN_URL = 'accounts:login'
 
@@ -233,12 +267,8 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = str(os.getenv('SENDGRID_API_KEY'))
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 DEFAULT_FROM_EMAIL = 'iconatorfavicon65@gmail.com'
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_DOMAIN = 'localhost:8000'
