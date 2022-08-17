@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import cloudinary.api
+import cloudinary.uploader
 from pathlib import Path
 import os
 import cloudinary
@@ -187,12 +189,10 @@ cloudinary.config(
     cloud_name=str(os.getenv('CLOUD_NAME')),
     api_key=str(os.getenv('CLOUD_KEY')),
     api_secret=str(os.getenv('CLOUD_SECRET')),
-    #api_proxy='http://proxy.server:3128',
+    # api_proxy='http://proxy.server:3128',
     # secure=True
 )
 
-import cloudinary.uploader
-import cloudinary.api
 
 # CLOUDINARY = {
 #       'cloud_name': 'db1nlq5lv',
@@ -273,4 +273,3 @@ EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_HOST_PASSWORD'))
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'iconatorfavicon65@gmail.com'
-

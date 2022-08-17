@@ -23,7 +23,7 @@ def imageUploadView(request):
         imgs.append(img)
     if request.method == 'POST':
         list(messages.get_messages(request))
-        #try:
+        # try:
         image = request.FILES['image'] or request.POST['image']
         imgid = f'{request.user}_image-{secrets.token_urlsafe(10)}'
         zipid = f'{request.user}_favicon-{secrets.token_urlsafe(10)}'
@@ -115,10 +115,6 @@ def contactPageView(request):
 
 class AboutPageView(TemplateView):
     template_name = "core/about.html"
-
-
-class ContactPageView(TemplateView):
-    template_name = "core/contact.html"
 
 
 class FAQPageView(TemplateView):

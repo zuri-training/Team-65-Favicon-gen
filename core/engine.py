@@ -1,3 +1,5 @@
+import cloudinary.api
+import cloudinary.uploader
 import cloudinary
 from PIL import Image
 import os
@@ -18,8 +20,6 @@ cloudinary.config(
     # secure=True
 )
 
-import cloudinary.uploader
-import cloudinary.api
 
 def createFavicons(img, imgid, zipid):
     # create temporary storage
@@ -38,7 +38,7 @@ def createFavicons(img, imgid, zipid):
     new_image = current_Image.resize((48, 48))
     new_image.save(f'{image_path}/favicon.ico')
     # zip all files in tempstorage including site manifest in the core
-    with ZipFile('tempstorage/favicon.zip', 'w', ZIP_DEFLATED) as zip:
+    with ZipFile(root/'tempstorage/favicon.zip', 'w', ZIP_DEFLATED) as zip:
         os.chdir(image_path)
         for x in os.listdir():
             if x != 'favicon_image.png':
