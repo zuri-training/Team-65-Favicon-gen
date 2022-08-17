@@ -10,12 +10,20 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-import cloudinary.api
-import cloudinary.uploader
-from pathlib import Path
-import os
-import cloudinary
 import cloudinary_storage
+import cloudinary.uploader
+import cloudinary.api
+import os
+from pathlib import Path
+import cloudinary
+cloudinary.config(
+    cloud_name=str(os.getenv('CLOUD_NAME')),
+    api_key=str(os.getenv('CLOUD_KEY')),
+    api_secret=str(os.getenv('CLOUD_SECRET')),
+    api_proxy='http://proxy.server:3128',
+    # secure=True
+)
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -185,13 +193,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-cloudinary.config(
-    cloud_name=str(os.getenv('CLOUD_NAME')),
-    api_key=str(os.getenv('CLOUD_KEY')),
-    api_secret=str(os.getenv('CLOUD_SECRET')),
-    api_proxy='http://proxy.server:3128',
-    # secure=True
-)
 
 # CLOUDINARY = {
 #       'cloud_name': 'db1nlq5lv',
@@ -267,7 +268,9 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
-SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = str(os.getenv('EMAIL_HOST_USER'))
+EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_HOST_PASSWORD'))
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'iconatorfavicon65@gmail.com'

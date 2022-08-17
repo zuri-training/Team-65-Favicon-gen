@@ -9,7 +9,7 @@ urlpatterns = [
     path('signup/', views.register, name='signup'),
     path('login/', views.login_user, name='login'),
     path('logout/', views.logout_user, name='logout'),
-    path('reset_password/', auth_views.PasswordResetView.as_view(success_url=reverse_lazy("accounts:password_reset_done")),
+    path('reset_password/', auth_views.PasswordResetView.as_view(html_email_template_name='registration/password_reset_email.html', success_url=reverse_lazy("accounts:password_reset_done")),
          name='reset_password'),
     path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(),
          name='password_reset_done'),
