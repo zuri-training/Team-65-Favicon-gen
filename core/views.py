@@ -23,24 +23,24 @@ def imageUploadView(request):
         imgs.append(img)
     if request.method == 'POST':
         list(messages.get_messages(request))
-        try:
-            image = request.FILES['image'] or request.POST['image']
-            imgid = f'{request.user}_image-{secrets.token_urlsafe(10)}'
-            zipid = f'{request.user}_favicon-{secrets.token_urlsafe(10)}'
-            url_list = createFavicons(image, imgid, zipid)
-            res_img, res_zip = url_list.values()
-            image = Image.objects.create(
-                user_id=request.user, image_name=imgid, image_url=res_img
-            )
-            image.save()
-            favicon = Favicon_Zip.objects.create(
-                user_id=request.user, image_id=image, favicon_name=zipid, favicon_zip_url=res_zip
-            )
-            favicon.save()
-            return redirect('core:upload')
-        except:
-            messages.info(request, 'Image not provided')
-            return render(request, 'core/upload.html')
+        #try:
+        image = request.FILES['image'] or request.POST['image']
+        imgid = f'{request.user}_image-{secrets.token_urlsafe(10)}'
+        zipid = f'{request.user}_favicon-{secrets.token_urlsafe(10)}'
+        url_list = createFavicons(image, imgid, zipid)
+        res_img, res_zip = url_list.values()
+        image = Image.objects.create(
+            user_id=request.user, image_name=imgid, image_url=res_img
+        )
+        image.save()
+        favicon = Favicon_Zip.objects.create(
+            user_id=request.user, image_id=image, favicon_name=zipid, favicon_zip_url=res_zip
+        )
+        favicon.save()
+        return redirect('core:upload')
+        # except:
+        #     messages.info(request, 'Image not provided')
+        #     return render(request, 'core/upload.html', {'images': imgs})
     else:
         return render(request, 'core/upload.html', {'images': imgs})
 
