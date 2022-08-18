@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .engine import createFavicons
 from .models import Image, Favicon_Zip
 from accounts.models import CustomUser
-import cloudinary
+from django.http import HttpResponseRedirect
 
 
 def dashBoardView(request):
@@ -85,14 +85,9 @@ def userProfileView(request):
 @login_required
 def deleteImageView(request, pk):
     image = Image.objects.get(id=pk)
-    favicon = Favicon_Zip.objects.get(image_id=image)
-    cloudinary.api.delete_resources(
-        [f'{favicon.favicon_name}.zip'], resource_type='raw')
-    cloudinary.api.delete_resources([image.image_name])
     image.delete()
-    list(messages.get_messages(request))
-    messages.success(request, 'Favicon Successfully Deleted')
-    return redirect(request.META.get('HTTP_REFERER'))
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
 
 
 def contactPageView(request):

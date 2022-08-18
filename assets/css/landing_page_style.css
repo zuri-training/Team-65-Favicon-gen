@@ -1,10 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&display=swap');
-html, 
+html,
 body {
     margin: 0;
     box-sizing: 0;
     font-family: 'Manrope', sans-serif;
+    overflow-y: scroll;
 }
 :-ms-input-placeholder {
     font-family: 'Manrope', sans-serif;
@@ -83,7 +84,7 @@ body {
 }
 
 #index_discover_bar form input {
-    outline: unset;  
+    outline: unset;
     border: 1px solid #611E97;
     border-radius: 4px;
     padding: 16px 20px;
@@ -172,9 +173,9 @@ body {
 #index_generate_tab video {
     margin-top: 58px;
     border-radius: 4px;
-    /* width: 1280px; 
+    /* width: 1280px;
     height: 720px; */
-    width: 100%; 
+    width: 100%;
     height: auto;
 }
 
@@ -348,7 +349,7 @@ body {
     #index_top_tab button {
         width: 100%;
     }
-    
+
     #index_top_tab img {
         display: none;
     }
@@ -363,8 +364,8 @@ body {
     #index_discover_bar form input {
         width: 100%;
     }
-        
-    
+
+
     #index_drop_zone {
         margin-bottom: 60px;
         width: 80%;
