@@ -1,9 +1,7 @@
-from email.mime import image
 from django.shortcuts import render, redirect
-from django.contrib.auth import get_user_model, authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .models import CustomUser
-from django.contrib.auth.views import PasswordResetView
 
 
 def register(request):

@@ -3,22 +3,11 @@ from PIL import Image
 import os
 import shutil
 from zipfile import ZipFile, ZIP_DEFLATED
-import dotenv
 from pathlib import Path
 
 # getting the file to read the .env folder for cloudinary info
 root = Path(__file__).resolve().parent.parent
-dotenv.read_dotenv(root / '.env')
 
-cloudinary.config(
-    cloud_name=str(os.getenv('CLOUD_NAME')),
-    api_key=str(os.getenv('CLOUD_KEY')),
-    api_secret=str(os.getenv('CLOUD_SECRET')),
-    api_proxy='http://proxy.server:3128',
-    secure=True
-)
-import cloudinary.uploader
-import cloudinary.api
 
 def createFavicons(img, imgid, zipid):
     # create temporary storage

@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import cloudinary.uploader
+import cloudinary.api
 from pathlib import Path
 import os
 import cloudinary
@@ -191,9 +193,6 @@ cloudinary.config(
     secure=True
 )
 
-import cloudinary.uploader
-import cloudinary.api
-
 
 LOGIN_URL = 'accounts:login'
 
@@ -239,7 +238,7 @@ SOCIALACCOUNT_PROVIDERS = {
         'APP': {
             'client_id': os.getenv("APP_ID"),
             'secret': os.getenv("APP_SECRET"),
-            
+
             'key': '',
         },
     },
@@ -254,10 +253,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER ="iconatorfavicon65@gmail.com"
-EMAIL_HOST_PASSWORD =""
+EMAIL_HOST_USER = "iconatorfavicon65@gmail.com"
+EMAIL_HOST_PASSWORD = ""
 
 # DEFAULT_FROM_EMAIL = 'iconatorfavicon65@gmail.com'
-
-
-
