@@ -194,19 +194,6 @@ cloudinary.config(
 import cloudinary.uploader
 import cloudinary.api
 
-# CLOUDINARY = {
-#       'cloud_name': 'db1nlq5lv',
-#       'api_key': '811464421754933',
-#       'api_secret': '7INdbrOuNgoajjMyYCyxBcjKQK4',
-#       'api_proxy': 'http://proxy.server:8080'
-# }
-
-# CLOUDINARY = {
-#       'cloud_name': 'maxiron2',
-#       'api_key': '537434449237162',
-#       'api_secret': '40rqE8BTGb2sNss7wkzaUesP2F0',
-#       'api_proxy': 'http://proxy.server:3128'
-# }
 
 
 LOGIN_URL = 'accounts:login'
@@ -216,10 +203,10 @@ SOCIALACCOUNT_PROVIDERS = {
         "APP": {
             "client_id":
             # os.getenv('GOOGlE_CLIENT_ID'),
-            "473132298384-oueg6muv6kph20usfk873i2jr09j53u6.apps.googleusercontent.com",
+            "",
             "secret":
             # os.getenv('GOOGLE_SECRET'),
-            "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",
+            "",
         },
 
         'SCOPE': [
@@ -252,10 +239,10 @@ SOCIALACCOUNT_PROVIDERS = {
         'VERSION': 'v13.0',
         'APP': {
             # os.getenv("APP_ID"),
-            'client_id': '416193227160075',
+            'client_id': '',
             'secret':
             # os.getenv("APP_SECRET"),
-            '07c8db8dfc7b4a514d1ff1472abaa97c',
+            '',
             'key': '',
         },
     },
@@ -271,7 +258,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER ="iconatorfavicon65@gmail.com"
-EMAIL_HOST_PASSWORD ="leezebqtdmemuktp"
+EMAIL_HOST_PASSWORD =""
 
 # DEFAULT_FROM_EMAIL = 'iconatorfavicon65@gmail.com'
 
