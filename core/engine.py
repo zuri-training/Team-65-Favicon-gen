@@ -1,5 +1,3 @@
-import cloudinary.api
-import cloudinary.uploader
 import cloudinary
 from PIL import Image
 import os
@@ -16,10 +14,11 @@ cloudinary.config(
     cloud_name=str(os.getenv('CLOUD_NAME')),
     api_key=str(os.getenv('CLOUD_KEY')),
     api_secret=str(os.getenv('CLOUD_SECRET')),
-    # api_proxy='http://proxy.server:3128',
-    # secure=True
+    api_proxy='http://proxy.server:3128',
+    secure=True
 )
-
+import cloudinary.uploader
+import cloudinary.api
 
 def createFavicons(img, imgid, zipid):
     # create temporary storage
