@@ -2,16 +2,11 @@
 <header id="header">
     <a href="{% url 'core:dashboard' %}"><img src="{% static 'images/logo.svg' %}" alt="Iconator" id="icon" /></a>
     <nav class="header_nav">
-        <a href="{% url 'core:upload' %}">
-            <p>Favicon <img src="{% static 'images/decorative_icon.svg' %}" alt="just_decoration" class="decoration"/></p>
-        </a>
+        <p id="favicon">Favicon <i class="fa-solid fa-sort-down"></i></p>
         <a href="{% url 'core:about' %}"><p>About Us</p></a>
-        <a href="{% url 'core:faq' %}"><p>FAQ</p></a>
-        <a href="{% url 'core:contact' %}">
-            <p>Help & Support <img src="{% static 'images/decorative_icon.svg' %}" alt="just_decoration" class="decoration"/></p>
-        </nav>
-    </a>
-        {% if request.user.is_authenticated %}
+        <p id="help&support">Help & Support <i class="fa-solid fa-sort-down"></i></p>
+    </nav>
+    {% if request.user.is_authenticated %}
         <a href="{% url 'core:profile' %}">
             <div class="header_user_details">
                 {% if request.user.profile_pic %}
@@ -33,6 +28,25 @@
     {% endif %}
     <button class="header_hamburger"><i class="fa-solid fa-bars"></i></button>
 </header>
+<div class="header_dropdown_box" data-drop="favicon">
+    <div class="header_dropdown_box_item">
+        <a href="{% url 'core:upload' %}">Generate Favicon</a>
+    </div>
+    <div class="header_dropdown_box_item">
+        <a href="{% url 'core:how-it-works' %}">How It Works</a>
+    </div>
+</div>
+<div class="header_dropdown_box" data-drop="help&support">
+    <div class="header_dropdown_box_item">
+        <a href="{% url 'core:contact' %}">Contact Us</a>
+    </div>
+    <div class="header_dropdown_box_item">
+        <a href="{% url 'core:faq' %}">FAQs</a>
+    </div>
+    <div class="header_dropdown_box_item">
+        <a href="{% url 'core:privacy-policy' %}">Privacy Policy</a>
+    </div>
+</div>
 <aside class="header_sidebar">
     <button class="close_sidebar"><i class="fa-solid fa-xmark"></i></button>
     <nav class="header_sidebar_nav">
@@ -42,24 +56,34 @@
             <p><a href="{% url 'core:dashboard' %}">Home</a></p>
         {% endif %}
         {% if 'my-favicons' in request.path %}
-            <p class="active"><a href="{% url 'core:upload' %}">Favicon</a></p>
+            <p class="active"><a href="{% url 'core:upload' %}">Generate Favicon</a></p>
         {% else %}
-            <p><a href="{% url 'core:upload' %}">Favicon</a></p>
+            <p><a href="{% url 'core:upload' %}">Generate Favicon</a></p>
+        {% endif %}
+        {% if 'how-it-works' in request.path %}
+            <p class="active"><a href="{% url 'core:how-it-works' %}">How It Works</a></p>
+        {% else %}
+            <p><a href="{% url 'core:how-it-works' %}">How It Works</a></p>
         {% endif %}
         {% if 'about' in request.path %}
             <p class="active"><a href="{% url 'core:about' %}">about us</a></p>
         {% else %}
             <p><a href="{% url 'core:about' %}">about us</a></p>
         {% endif %}
+        {% if 'contact' in request.path %}
+            <p class="active"><a href="{% url 'core:contact' %}">Contact Us</a></p>
+        {% else %}
+            <p><a href="{% url 'core:contact' %}">Contact Us</a></p>
+        {% endif %}
         {% if 'faq' in request.path %}
             <p class="active"><a href="{% url 'core:faq' %}">FAQ</a></p>
         {% else %}
             <p><a href="{% url 'core:faq' %}">Faq</a></p>
         {% endif %}
-        {% if 'contact' in request.path %}
-            <p class="active"><a href="{% url 'core:contact' %}">help & support</a></p>
+        {% if 'privacy-policy' in request.path %}
+            <p class="active"><a href="{% url 'core:privacy-policy' %}">Privacy Policy</a></p>
         {% else %}
-            <p><a href="{% url 'core:contact' %}">help & support</a></p>
+            <p><a href="{% url 'core:privacy-policy' %}">Privacy Policy</a></p>
         {% endif %}
     </nav>
     {% if request.user.is_authenticated %}

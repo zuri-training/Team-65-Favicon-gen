@@ -2,23 +2,19 @@
 <footer id="footer">
 	<section class="first-section">
 		<div class="footer_cards">
-			<a href="{% url 'core:upload' %}">
-				<h1>Product</h1>
-				<ul class="footer_card_items">
-					<li>Favicon Generator</li>
-					<li>Favicons for good web starters</li>
-					<li>HTML Code Download</li>
-					<li>Privacy Policy</li>
-				</ul>
-			</a>
+			<h1>Product</h1>
+			<ul class="footer_card_items">
+				<li><a href="{% url 'core:upload' %}">Favicon Generator</a></li>
+				<li>Favicons for good web starters</li>
+				<li>HTML Code Download</li>
+			</ul>
 		</div>
 		<div class="footer_cards">
 			<h1>Company</h1>
 			<ul class="footer_card_items">
 				<li><a href="{% url 'core:about' %}">About</a></li>
 				<li><a href="https://github.com/zuri-training/Team-65-Favicon-gen/blob/dev/documentation/Team.md">Our Team</a></li>
-				<li>Library</li>
-				<li>Privacy Policy</li>
+				<li><a href="{% url 'core:privacy-policy' %}">Privacy Policy</a></li>
 			</ul>
 		</div>
 		<div class="footer_cards">
@@ -26,18 +22,15 @@
 			<ul class="footer_card_items">
 				<li>Iconator Community</li>
 				<li><a href="{% url 'core:faq' %}">FAQs</a></li>
-				<li>
-					<a href="{% url 'core:contact' %}">Report Bug</a>
-				</li>
-				<li>Resources</li>
+				<li><a href="{% url 'core:contact' %}">Report Bug</a></li>
 			</ul>
 		</div>
 		<div class="footer_cards">
 			<h1>Contact Us</h1>
 			<ul class="footer_card_items">
-				<li>Contact@iconator.com</li>
+				<li>iconator@gmail.com</li>
 				<li>(+234) 804 6709 389</li>
-				<li>24, Idowu Martins Street, Ikeaja Lagos</li>
+				<li>24, Idowu Martins Street, Ikeja Lagos</li>
 				<li>
 					<div class="footer_social_icons">
 						<img src="{% static 'images/facebook_icon.svg' %}" alt="facebook-icon" />

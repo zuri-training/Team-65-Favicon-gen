@@ -12,9 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-import cloudinary.api
-import cloudinary.uploader
 import cloudinary
+import cloudinary_storage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,12 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-7m$*urtv0faxe2q9via-x79_i+9zt!eg!)v_a#3_zs*l^pic@)'
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'iconator.pythonanywhere.com',
+                 'www.iconator.pythonanywhere.com ']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'accounts',
     'core',
+    'cloudinary_storage',
     'cloudinary',
 
     # AllAuth
@@ -95,14 +96,25 @@ WSGI_APPLICATION = 'favicon_gen.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': str(os.getenv('DB_NAME')),
+#         'USER': str(os.getenv('DB_USER')),
+#         'PASSWORD': str(os.getenv('DB_PASSWORD')),
+#         'HOST': str(os.getenv('DB_HOST')),
+#         'PORT': 5432,
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': str(os.getenv('DB_NAME')),
-        'USER': str(os.getenv('DB_USER')),
-        'PASSWORD': str(os.getenv('DB_PASSWORD')),
-        'HOST': str(os.getenv('DB_HOST')),
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'iconator$favicon',
+        'USER': 'iconator',
+        'PASSWORD': 'database',
+        'HOST': 'iconator.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
     }
 }
 
@@ -166,12 +178,23 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# MEDIA_URL = '/media/'
+
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 cloudinary.config(
     cloud_name=str(os.getenv('CLOUD_NAME')),
     api_key=str(os.getenv('CLOUD_KEY')),
     api_secret=str(os.getenv('CLOUD_SECRET')),
+    api_proxy='http://proxy.server:3128',
     secure=True
 )
+
+import cloudinary.uploader
+import cloudinary.api
+
+
 
 LOGIN_URL = 'accounts:login'
 
@@ -180,10 +203,10 @@ SOCIALACCOUNT_PROVIDERS = {
         "APP": {
             "client_id":
             # os.getenv('GOOGlE_CLIENT_ID'),
-            "970366465519-22lhlm60p0h6r5e0i2au0fd6fg8v8m94.apps.googleusercontent.com",
+            "",
             "secret":
             # os.getenv('GOOGLE_SECRET'),
-            "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",
+            "",
         },
 
         'SCOPE': [
@@ -216,10 +239,10 @@ SOCIALACCOUNT_PROVIDERS = {
         'VERSION': 'v13.0',
         'APP': {
             # os.getenv("APP_ID"),
-            'client_id': '469777697958206',
+            'client_id': '',
             'secret':
             # os.getenv("APP_SECRET"),
-            '6876c4ddc18bbb47f69e9eff48c9ee52',
+            '',
             'key': '',
         },
     },
@@ -230,12 +253,14 @@ SOCIALACCOUNT_LOGIN_ON_GET = True
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = 587
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = str(os.getenv('SENDGRID_API_KEY'))
-DEFAULT_FROM_EMAIL = 'iconatorfavicon65@gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER ="iconatorfavicon65@gmail.com"
+EMAIL_HOST_PASSWORD =""
+
+# DEFAULT_FROM_EMAIL = 'iconatorfavicon65@gmail.com'
+
+
+

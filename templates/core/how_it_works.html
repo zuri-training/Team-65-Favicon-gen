@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block custom_style %}
+    <link rel="stylesheet" href="{% static 'css/how_it_works.css' %}">
+{% endblock custom_style %}
+{% block title %}
+    ICONATOR | HOW IT WORKS
+{% endblock title %}
+{% block content %}
+    <section class="hiw_section">
+        <h1 class="hiw_heading">how it works</h1>
+        <article class="hiw_article">
+            <h2 class="hiw_article_header">What is a favicon?</h2>
+            <p class="hiw_article_text">A favicon is a small icon or collection of icons associated with a website, web page, or web application. It’s displayed
+            within the browser tabs and bookmarks bar. The examples below show the favicons for Google, Reddit, and Squarespace
+            within the browser tab.</p>
+            <figure class="hiw_article_image"><img src="{% static 'images/info_demo_image.png' %}" alt="favicon demo image"></figure>
+        </article>
+        <p class="hiw_article_text hiw_tutorial">Use this tutorial if you have an ICO formatted favicon. An ICO formatted favicon ends with the .ico file extension. If
+        you have a PNG formatted favicon use this tutorial instead.</p>
+        <article class="hiw_article">
+            <div class="hiw_article_steps">
+                <h2 class="hiw_article_header">step 1:</h2>
+                <p class="hiw_article_step_text">Upload or Create Your Favicon</p>
+            </div>
+            <p class="hiw_article_text">Make sure that you have an uploadable file format for any upload (JPEG or PNG) avaliable. Then use the
+            “Click/drag” to upload your favicon</p>
+        </article>
+        <article class="hiw_article">
+            <div class="hiw_article_steps">
+                <h2 class="hiw_article_header">step 2:</h2>
+                <p class="hiw_article_step_text">Generate Favicon</p>
+            </div>
+            <p class="hiw_article_text">Click the Upload button to generate the favicon zip file for your image (Upload is started automatically if image is dragged and dropped onto the upload area). This file is exported as a zip because we intent to keep quality should you decide to use them anywhere</p>
+        </article>
+        <article class="hiw_article">
+            <div class="hiw_article_steps">
+                <h2 class="hiw_article_header">step 3:</h2>
+                <p class="hiw_article_step_text">Download the Zipped file</p>
+            </div>
+            <p class="hiw_article_text">To access the zip file, download the zip file to your local machine, Unzip the file. The folder contains the following
+            files</p>
+            <ul class="hiw_article_list">
+                <li>favicon512x512.png</li>
+                <li>favicon192x192.png</li>
+                <li>favicon180x180.png</li>
+                <li>favicon32x32.png</li>
+                <li>favicon16x16.png</li>
+                <li>favicon.ico</li>
+                <li>site.webmanifest</li>
+            </ul>
+            <p class="hiw_article_text">Then place the folder in the root directory of your website</p>
+        </article>
+        <article class="hiw_article">
+            <div class="hiw_article_steps">
+                <h2 class="hiw_article_header">step 4:</h2>
+                <p class="hiw_article_step_text">Copy Favicon HTML code</p>
+            </div>
+            <p class="hiw_article_text">Copy the HTML code using the copy button. This should be placed in the head of your HTML document.</p>
+        </article>
+    </section>
+{% endblock content %}

@@ -1,10 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&display=swap');
-html, 
+html,
 body {
     margin: 0;
     box-sizing: 0;
     font-family: 'Manrope', sans-serif;
+    overflow-y: scroll;
 }
 :-ms-input-placeholder {
     font-family: 'Manrope', sans-serif;
@@ -83,7 +84,7 @@ body {
 }
 
 #index_discover_bar form input {
-    outline: unset;  
+    outline: unset;
     border: 1px solid #611E97;
     border-radius: 4px;
     padding: 16px 20px;
@@ -172,9 +173,9 @@ body {
 #index_generate_tab video {
     margin-top: 58px;
     border-radius: 4px;
-    /* width: 1280px; 
+    /* width: 1280px;
     height: 720px; */
-    width: 100%; 
+    width: 100%;
     height: auto;
 }
 
@@ -200,14 +201,20 @@ body {
 }
 
 #index_features_items_container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
+    align-items: flex-start;
     margin-top: 62px;
-    gap: 129px;
+    gap: 2rem;
 }
-
+.index_features_items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
 #index_features_items_container .index_items_image {
     margin: auto;
     width: 100px;
@@ -348,35 +355,42 @@ body {
     #index_top_tab button {
         width: 100%;
     }
-    
+
     #index_top_tab img {
         display: none;
     }
-
-
     #index_discover_bar form {
         display: flex;
         flex-direction: row;
         align-items: center;
+        margin-top: 1rem;
     }
 
     #index_discover_bar form input {
         width: 100%;
     }
-        
-    
     #index_drop_zone {
         margin-bottom: 60px;
         width: 80%;
     }
     #index_features_items_container {
-        gap: 2.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding-inline: 2rem;
     }
     #index_features_tab h1 {
         margin-bottom: .5rem;
     }
     #index_features_items_container .index_items_title {
         margin-top: .8rem;
+    }
+    #index_features_items_container .index_items_image {
+        width: 90px;
+        height: 90px;
+        margin-bottom: .5rem;
+    }
+    #index_features_items_container .index_items_paragraph {
+        padding-inline: 1rem;
     }
     #index_customer_tab {
         padding: 2rem 3rem;
@@ -488,7 +502,9 @@ body {
     }
     #index_features_items_container {
         margin-top: 2rem;
+        grid-template-columns: auto;
         gap: 1rem;
+        padding: 1rem;
     }
     #index_features_items_container .index_items_image {
         margin: auto;

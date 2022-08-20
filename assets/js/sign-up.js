@@ -49,7 +49,7 @@ function onChangePassword() {
         }
     });
     if (valid) {
-        document.querySelector('#message').style.display = 'none';
+        message.style.display = 'none';
     }
 }
 function onChange() {

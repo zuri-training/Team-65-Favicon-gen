@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .engine import createFavicons
 from .models import Image, Favicon_Zip
 from accounts.models import CustomUser
+from django.http import HttpResponseRedirect
 
 
 def dashBoardView(request):
@@ -40,7 +41,7 @@ def imageUploadView(request):
             return redirect('core:upload')
         except:
             messages.info(request, 'Image not provided')
-            return render(request, 'core/upload.html')
+            return render(request, 'core/upload.html', {'images': imgs})
     else:
         return render(request, 'core/upload.html', {'images': imgs})
 
@@ -85,7 +86,8 @@ def userProfileView(request):
 def deleteImageView(request, pk):
     image = Image.objects.get(id=pk)
     image.delete()
-    return redirect('core:upload')
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
 
 
 def contactPageView(request):
@@ -97,11 +99,10 @@ def contactPageView(request):
         if name and email and message:
             subject = "Website Inquiry"
             body = {
-                'name': f'Name: {name}',
-                'email': f'Email: {email}',
-                'message': f'Message: {message}'
+                'Name': f"Hi, I'm {name} and my email is {email}",
+                'Message': f'{message}'
             }
-            message = "\n".join(body.values())
+            message = "\n\n".join(body.values())
             try:
                 send_mail(subject, message, 'iconatorfavicon65@gmail.com', [
                           'iconatorfavicon65@gmail.com'])
@@ -118,9 +119,13 @@ class AboutPageView(TemplateView):
     template_name = "core/about.html"
 
 
-class ContactPageView(TemplateView):
-    template_name = "core/contact.html"
-
-
 class FAQPageView(TemplateView):
     template_name = "core/faq.html"
+
+
+class HowItWorksPageView(TemplateView):
+    template_name = "core/how_it_works.html"
+
+
+class PrivacyPolicyPageView(TemplateView):
+    template_name = "core/privacy_policy.html"
